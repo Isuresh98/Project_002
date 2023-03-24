@@ -64,16 +64,16 @@ public class PlayerController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (eventData.pointerCurrentRaycast.gameObject.name == "Left")
+        if (eventData.selectedObject.name == "Left")
         {
             moveLeft = true;
             print("clik left");
         }
-        else if (eventData.pointerCurrentRaycast.gameObject.name == "Right")
+        else if (eventData.selectedObject.name == "Right")
         {
             moveRight = true;
         }
-        else if (eventData.pointerCurrentRaycast.gameObject.name == "Jump")
+        else if (eventData.selectedObject.name == "Jump")
         {
             jump = true;
         }
@@ -81,15 +81,15 @@ public class PlayerController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.pointerCurrentRaycast.gameObject.name == "Left")
+        if (eventData.selectedObject.name == "Left")
         {
             moveLeft = false;
         }
-        else if (eventData.pointerCurrentRaycast.gameObject.name == "Right")
+        else if (eventData.selectedObject.name == "Right")
         {
             moveRight = false;
         }
-        else if (eventData.pointerCurrentRaycast.gameObject.name == "Jump")
+        else if (eventData.selectedObject.name == "Jump")
         {
             jump = false;
         }
