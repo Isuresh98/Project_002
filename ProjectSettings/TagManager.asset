@@ -7,6 +7,7 @@ TagManager:
   - Left
   - Right
   - Jump
+  - Ground
   layers:
   - Default
   - TransparentFX
