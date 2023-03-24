@@ -61,19 +61,22 @@ public class PlayerController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
        
     }
+   
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (eventData.selectedObject.name == "Left")
+        Debug.Log("Pointer down on " + eventData.pointerCurrentRaycast.gameObject.name);
+        // rest of your code
+        if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Left"))
         {
             moveLeft = true;
-            print("clik left");
+            print("click left");
         }
-        else if (eventData.selectedObject.name == "Right")
+        else if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Right"))
         {
             moveRight = true;
         }
-        else if (eventData.selectedObject.name == "Jump")
+        else if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Jump"))
         {
             jump = true;
         }
@@ -81,37 +84,40 @@ public class PlayerController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.selectedObject.name == "Left")
+        Debug.Log("Pointer up on " + eventData.pointerCurrentRaycast.gameObject.name);
+        // rest of your code
+        if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Left"))
         {
             moveLeft = false;
         }
-        else if (eventData.selectedObject.name == "Right")
+        else if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Right"))
         {
             moveRight = false;
         }
-        else if (eventData.selectedObject.name == "Jump")
+        else if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Jump"))
         {
             jump = false;
         }
     }
-   /* public void LeftButton()
-    {
-        moveLeft = true;
-        moveRight = false;
 
-    }
-    public void RightButton()
-    {
-        moveRight = true;
-        moveLeft = false;
+    /* public void LeftButton()
+     {
+         moveLeft = true;
+         moveRight = false;
 
-    }
-    public void JumpButton()
-    {
-        jump = true;
+     }
+     public void RightButton()
+     {
+         moveRight = true;
+         moveLeft = false;
 
-    }
-   */
+     }
+     public void JumpButton()
+     {
+         jump = true;
+
+     }
+    */
     void Flip()
     {
         facingRight = !facingRight;
