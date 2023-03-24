@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 416805310}
   - component: {fileID: 416805309}
   m_Layer: 5
-  m_Name: RightButton
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +304,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 416805310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 489015323}
+        m_MethodName: RightButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &416805310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,7 +625,7 @@ GameObject:
   - component: {fileID: 540995419}
   - component: {fileID: 540995418}
   m_Layer: 5
-  m_Name: LeftButton
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +693,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 540995419}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 489015323}
+        m_MethodName: LeftButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &540995419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,7 +927,7 @@ GameObject:
   - component: {fileID: 725147809}
   - component: {fileID: 725147808}
   m_Layer: 5
-  m_Name: JumpButton
+  m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -973,7 +995,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 725147809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 489015323}
+        m_MethodName: JumpButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &725147809
 MonoBehaviour:
   m_ObjectHideFlags: 0
