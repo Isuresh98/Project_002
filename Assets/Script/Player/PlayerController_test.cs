@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerController_test : MonoBehaviour
 {
@@ -16,6 +15,7 @@ public class PlayerController_test : MonoBehaviour
     private bool isMovingLeft = false;
     private bool isMovingRight = false;
     private bool isJumping = false;
+    private bool hasJumped = false;
 
     void Start()
     {
@@ -52,40 +52,46 @@ public class PlayerController_test : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        if (isJumping && isGrounded)
+        if (isJumping && isGrounded && !hasJumped)
         {
             rb.velocity = Vector2.up * jumpForce;
+            hasJumped = true;
         }
     }
 
-    public void moveLeft()
+    public void MoveLeftButtonDown()
     {
         isMovingLeft = true;
     }
 
-    public void stopMovingLeft()
+    public void MoveLeftButtonUp()
     {
         isMovingLeft = false;
     }
 
-    public void moveRight()
+    public void MoveRightButtonDown()
     {
         isMovingRight = true;
     }
 
-    public void stopMovingRight()
+    public void MoveRightButtonUp()
     {
         isMovingRight = false;
     }
 
-    public void jump()
+    public void JumpButtonDown()
     {
-        isJumping = true;
+        if (isGrounded)
+        {
+            isJumping = true;
+            hasJumped = false;
+        }
     }
 
-    public void stopJumping()
+    public void JumpButtonUp()
     {
         isJumping = false;
+        isGrounded = false;
     }
 
     void Flip()
