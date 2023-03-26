@@ -46,6 +46,12 @@ public class PlayerController_test : MonoBehaviour
         {
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
+
+        if (isJumping && isGrounded && !hasJumped)
+        {
+            rb.velocity = Vector2.up * jumpForce;
+            hasJumped = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,16 +61,20 @@ public class PlayerController_test : MonoBehaviour
             isGrounded = true;
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
 
     void Update()
     {
         
 
-        if (isJumping && isGrounded && !hasJumped)
-        {
-            rb.velocity = Vector2.up * jumpForce;
-            hasJumped = true;
-        }
+        
     }
 
     public void MoveLeftButtonDown()
@@ -99,7 +109,7 @@ public class PlayerController_test : MonoBehaviour
     public void JumpButtonUp()
     {
         isJumping = false;
-        isGrounded = false;
+       
     }
 
     void Flip()
