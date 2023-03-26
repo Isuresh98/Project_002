@@ -599,8 +599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1edb1d4684495384c8415c6559bdeb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPoolSize: 5
+  bulletPoolSize: 3
   bulletPool:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   shootButton: {fileID: 1148941869}
   bulletPrefab: {fileID: 6827491939771678096, guid: 94b6ec2a00f85614fa81413e537d801b,
