@@ -17,9 +17,13 @@ public class PlayerController_test : MonoBehaviour
     private bool isJumping = false;
     private bool hasJumped = false;
 
+    //animation
+    private Animator anima;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anima = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -80,21 +84,28 @@ public class PlayerController_test : MonoBehaviour
     public void MoveLeftButtonDown()
     {
         isMovingLeft = true;
+        anima.SetBool("isRun", true);
     }
 
     public void MoveLeftButtonUp()
     {
         isMovingLeft = false;
+        anima.SetBool("isRun", false);
+
     }
 
     public void MoveRightButtonDown()
     {
         isMovingRight = true;
+        anima.SetBool("isRun", true);
+
     }
 
     public void MoveRightButtonUp()
     {
         isMovingRight = false;
+        anima.SetBool("isRun", false);
+
     }
 
     public void JumpButtonDown()
