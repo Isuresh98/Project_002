@@ -19,6 +19,8 @@ public class PlayerController_test : MonoBehaviour
 
     //animation
     private Animator anima;
+    [SerializeField]
+    float animTIme;
 
     void Start()
     {
@@ -55,6 +57,12 @@ public class PlayerController_test : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
             hasJumped = true;
+           
+        }
+
+        if (isGrounded)
+        {
+           
         }
     }
 
@@ -71,14 +79,15 @@ public class PlayerController_test : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+            animTIme = 0;
         }
     }
 
     void Update()
     {
-        
 
-        
+       
+       
     }
 
     public void MoveLeftButtonDown()
@@ -114,13 +123,17 @@ public class PlayerController_test : MonoBehaviour
         {
             isJumping = true;
             hasJumped = false;
+
+            anima.SetBool("isJump", true);
         }
+      
     }
 
     public void JumpButtonUp()
     {
         isJumping = false;
-       
+        anima.SetBool("isJump", false);
+
     }
 
     void Flip()
