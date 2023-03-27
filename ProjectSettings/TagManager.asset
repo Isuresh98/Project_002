@@ -8,6 +8,7 @@ TagManager:
   - Right
   - Jump
   - Ground
+  - Bullet
   layers:
   - Default
   - TransparentFX

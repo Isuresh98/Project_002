@@ -13,9 +13,13 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+
+    // animation
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         // Shooting
         bulletPool = new List<GameObject>();
         for (int i = 0; i < bulletPoolSize; i++)
@@ -33,7 +37,7 @@ public class Shooting : MonoBehaviour
     {
 
         // Shooting
-
+       
     }
 
     public void OnShootButtonClicked()
@@ -44,21 +48,30 @@ public class Shooting : MonoBehaviour
     public void OnShootButtonReleased()
     {
         Shoot(false);
+      //  anim.SetBool("isShoot", false);
     }
     public void Shoot(bool buttonPressed)
     {
+        
         if (buttonPressed && bulletPool.Count > 0)
         {
+          //  anim.SetBool("isShoot", true);
+            
             for (int i = 0; i < bulletPool.Count; i++)
             {
                 if (!bulletPool[i].activeInHierarchy)
                 {
+                    anim.SetTrigger("isShoot1");
                     bulletPool[i].SetActive(true);
                     bulletPool[i].transform.position = firePoint.position;
                     bulletPool[i].transform.rotation = firePoint.rotation;
+                   
+                   // 
+                    
                     break;
                 }
             }
+           
         }
     }
 }

@@ -60,9 +60,9 @@ public class PlayerController_test : MonoBehaviour
            
         }
 
-        if (isGrounded)
+        if (!isGrounded)
         {
-           
+            anima.SetBool("isJump", true);
         }
     }
 
@@ -71,6 +71,7 @@ public class PlayerController_test : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            anima.SetBool("isJump", false);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -124,7 +125,7 @@ public class PlayerController_test : MonoBehaviour
             isJumping = true;
             hasJumped = false;
 
-            anima.SetBool("isJump", true);
+           
         }
       
     }
@@ -132,7 +133,7 @@ public class PlayerController_test : MonoBehaviour
     public void JumpButtonUp()
     {
         isJumping = false;
-        anima.SetBool("isJump", false);
+      
 
     }
 
