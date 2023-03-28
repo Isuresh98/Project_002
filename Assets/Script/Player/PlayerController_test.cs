@@ -176,6 +176,7 @@ public class PlayerController_test : MonoBehaviour
         isbooster = true;
         boostButtonImage.enabled = true;
         anima.SetBool("isJet", true);
+        anima.SetBool("isJump", false);
     }
 
     // Called when the boost button is released
