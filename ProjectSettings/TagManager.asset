@@ -9,6 +9,8 @@ TagManager:
   - Jump
   - Ground
   - Bullet
+  - EBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
