@@ -44,10 +44,10 @@ public class PlayerController_test : MonoBehaviour
     void FixedUpdate()
     {
         //jetpak
-        if (maxFuel > 0 && isbooster)
+        if (isbooster)
         {
             rb.AddForce(new Vector2(0f, jetpackForce), ForceMode2D.Force);
-            maxFuel--;
+         
          
         }
         

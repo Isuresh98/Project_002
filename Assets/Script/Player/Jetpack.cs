@@ -29,11 +29,12 @@ public class Jetpack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (maxFuel>0&& isbooster)
+        if ( isbooster)
         {
             rb.AddForce(new Vector2(0f, jetpackForce), ForceMode2D.Force);
-            maxFuel--;
+            // maxFuel--;
         }
+
     }
 
     // Called when the boost button is pressed
