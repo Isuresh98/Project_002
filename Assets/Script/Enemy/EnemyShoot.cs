@@ -10,6 +10,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     private float shootDelay = 1f;
     private float lastShootTime = 0f;
+    public float shootingDistance = 10f;
 
     private void Start()
     {
@@ -29,15 +30,21 @@ public class EnemyShoot : MonoBehaviour
     {
         if (player != null && Time.time - lastShootTime > shootDelay)
         {
-            // Create a bullet that moves towards the player
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-            Vector2 direction = (player.position - bulletSpawn.position).normalized;
-            bulletRb.velocity = direction * bulletSpeed;
+            // Check if the player is within shooting distance
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            if (distanceToPlayer <= shootingDistance)
+            {
+                // Create a bullet that moves towards the player
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+                Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+                Vector2 direction = (player.position - bulletSpawn.position).normalized;
+                bulletRb.velocity = direction * bulletSpeed;
 
-            // Update the last shoot time
-            lastShootTime = Time.time;
+                // Update the last shoot time
+                lastShootTime = Time.time;
+            }
         }
     }
+
 
 }
