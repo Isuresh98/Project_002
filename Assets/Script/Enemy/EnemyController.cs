@@ -7,9 +7,16 @@ public class EnemyController : MonoBehaviour
     public float activeDistance = 5f;
     public float stopDistance = 2f;
     private bool facingRight = true;
+    private Animator enemyAnima;
+
+    private void Start()
+    {
+        enemyAnima = GetComponent<Animator>();
+    }
 
     void Update()
     {
+        enemyAnima.SetBool("isAttact", false);
         // Check if player is within active distance
         float distance = Vector2.Distance(transform.position, player.position);
         if (distance < activeDistance)
@@ -29,6 +36,8 @@ public class EnemyController : MonoBehaviour
             {
                 // Move towards player
                 transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+                enemyAnima.SetBool("isAttact", true);
+
             }
         }
     }

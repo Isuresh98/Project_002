@@ -8,6 +8,13 @@ public class AIDestinationSetter : VersionedMonoBehaviour
     public Transform target;
     public float activeDistance = 15f; // new variable for active distance
     private IAstarAI ai;
+    private Animator enemyAnima;
+
+    private void Start()
+    {
+        enemyAnima = GetComponent<Animator>();
+
+    }
 
     void OnEnable()
     {
@@ -22,12 +29,17 @@ public class AIDestinationSetter : VersionedMonoBehaviour
 
     void Update()
     {
+        enemyAnima.SetBool("isAttact", false);
+
         if (target != null && ai != null)
         {
             float distance = Vector3.Distance(transform.position, target.position);
             if (distance < activeDistance)
             {
+
                 ai.destination = target.position;
+                enemyAnima.SetBool("isAttact", true);
+
             }
         }
     }
