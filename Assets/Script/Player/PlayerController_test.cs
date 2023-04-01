@@ -32,6 +32,12 @@ public class PlayerController_test : MonoBehaviour
     public Image boostButtonImage;
     bool isbooster;
 
+    //UI Heth and other
+    public int maxHealth = 15;
+    public Slider healthSlider;
+    public Gradient gradient;
+    public Image fillImage;
+
 
     void Start()
     {
@@ -39,6 +45,21 @@ public class PlayerController_test : MonoBehaviour
         anima = GetComponent<Animator>();
         // Disable the boost button image at the start
         boostButtonImage.enabled = false;
+
+        //ui
+        healthSlider.minValue = 0;
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = maxHealth;
+    }
+    void Update()
+    {
+
+        // Calculate the fill percentage of the slider
+        float fillPercentage = healthSlider.value / healthSlider.maxValue;
+
+        // Set the color of the fill image using the gradient
+        fillImage.color = gradient.Evaluate(fillPercentage);
+
     }
 
     void FixedUpdate()
@@ -115,16 +136,30 @@ public class PlayerController_test : MonoBehaviour
         if (collision.gameObject.CompareTag("EBosBullet"))
         {
             Destroy(collision.gameObject);
+
+            maxHealth--;
+            healthSlider.value = maxHealth;
+            if (maxHealth <= 0)
+            {
+                // The enemy is destroyed
+                Destroy(gameObject, 2f);
+
+            }
         }
-
+        
 
     }
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Boundry"))
+        {
+            Collider2D chekPointCollider = collision.gameObject.GetComponent<Collider2D>();
+            chekPointCollider.isTrigger = false;
 
-       
-       
+        }
     }
+
+  
 
     public void MoveLeftButtonDown()
     {
@@ -194,6 +229,10 @@ public class PlayerController_test : MonoBehaviour
         isbooster = false;
         boostButtonImage.enabled = false;
         anima.SetBool("isJet", false);
+    }
+    private void OnBecameInvisible()
+    {
+       
     }
 
 }

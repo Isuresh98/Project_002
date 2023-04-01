@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
+    internal static object main;
     public GameObject player;
     public float offset;
     void Update()

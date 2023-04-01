@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - EBosBullet
   - Bos1
+  - Boundry
   layers:
   - Default
   - TransparentFX

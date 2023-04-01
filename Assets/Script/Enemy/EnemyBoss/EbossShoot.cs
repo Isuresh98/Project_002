@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class EbossShoot : MonoBehaviour
 {
-    public int maxHealth = 15;
-    private int currentHealth;
+    
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed = 10f;
@@ -54,21 +53,5 @@ public class EbossShoot : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            maxHealth--;
-            if (maxHealth <= 0)
-            {
-                // The enemy is destroyed
-                Destroy(gameObject);
-            }
-            print("hit the bullet");
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-       
-    }
+    
 }
