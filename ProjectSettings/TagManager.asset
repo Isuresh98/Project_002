@@ -11,6 +11,8 @@ TagManager:
   - Bullet
   - EBullet
   - Enemy
+  - EBosBullet
+  - Bos1
   layers:
   - Default
   - TransparentFX

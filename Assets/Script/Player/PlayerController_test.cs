@@ -110,6 +110,15 @@ public class PlayerController_test : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EBosBullet"))
+        {
+            Destroy(collision.gameObject);
+        }
+
+
+    }
     void Update()
     {
 
