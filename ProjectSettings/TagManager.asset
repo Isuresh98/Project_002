@@ -14,6 +14,8 @@ TagManager:
   - EBosBullet
   - Bos1
   - Boundry
+  - BosUI
+  - LBounsON
   layers:
   - Default
   - TransparentFX

@@ -29,7 +29,7 @@ public class PlayerController_test : MonoBehaviour
 
     private float currentFuel;
     // These variables will hold the references to the UI buttons that control the jetpack
-    public Image boostButtonImage;
+   
     bool isbooster;
 
     //UI Heth and other
@@ -38,18 +38,24 @@ public class PlayerController_test : MonoBehaviour
     public Gradient gradient;
     public Image fillImage;
 
+    private GameObject BosUI;
+    private GameObject LBounsON;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
         // Disable the boost button image at the start
-        boostButtonImage.enabled = false;
+  
 
         //ui
         healthSlider.minValue = 0;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = maxHealth;
+        BosUI = GameObject.FindGameObjectWithTag("BosUI");
+        LBounsON = GameObject.FindGameObjectWithTag("LBounsON");
+        BosUI.SetActive(false);
+        LBounsON.SetActive(false);
     }
     void Update()
     {
@@ -130,14 +136,18 @@ public class PlayerController_test : MonoBehaviour
             animTIme = 0;
         }
     }
+    private void OnDestroy()
+    {
+        Destroy(healthSlider.gameObject);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("EBosBullet"))
         {
-            Destroy(collision.gameObject);
+            
 
-            maxHealth--;
+            maxHealth -=5;
             healthSlider.value = maxHealth;
             if (maxHealth <= 0)
             {
@@ -146,15 +156,29 @@ public class PlayerController_test : MonoBehaviour
 
             }
         }
-        
+        if (collision.gameObject.CompareTag("EBullet"))
+        {
+            Destroy(collision.gameObject);
+
+            maxHealth -= 1;
+            healthSlider.value = maxHealth;
+            if (maxHealth <= 0)
+            {
+                // The enemy is destroyed
+                Destroy(gameObject, 2f);
+
+            }
+        }
+
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Boundry"))
         {
-            Collider2D chekPointCollider = collision.gameObject.GetComponent<Collider2D>();
-            chekPointCollider.isTrigger = false;
+            
+            BosUI.SetActive(true);
+            LBounsON.SetActive(true);
 
         }
     }
@@ -218,7 +242,7 @@ public class PlayerController_test : MonoBehaviour
     public void BoostButtonPressed()
     {
         isbooster = true;
-        boostButtonImage.enabled = true;
+       
         anima.SetBool("isJet", true);
         anima.SetBool("isJump", false);
     }
@@ -227,7 +251,7 @@ public class PlayerController_test : MonoBehaviour
     public void BoostButtonReleased()
     {
         isbooster = false;
-        boostButtonImage.enabled = false;
+       
         anima.SetBool("isJet", false);
     }
     private void OnBecameInvisible()
