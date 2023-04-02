@@ -169,6 +169,8 @@ public class PlayerController_test : MonoBehaviour
 
 
     }
+
+    public int CoinAmount;
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Boundry"))
@@ -177,6 +179,12 @@ public class PlayerController_test : MonoBehaviour
             BosUI.SetActive(true);
             LBounsON.SetActive(true);
 
+        }
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            CoinAmount++;
+           
         }
     }
 

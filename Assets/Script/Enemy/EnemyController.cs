@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         enemyAnima = GetComponent<Animator>();
+      
+
     }
 
     void Update()
@@ -50,4 +52,23 @@ public class EnemyController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    public GameObject coinPrefab;
+    public GameObject SparkFVX;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            // Spawn coin and destroy enemy
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+
+            // Spawn SparkFVX and destroy after 1 second
+            GameObject spark = Instantiate(SparkFVX, transform.position, Quaternion.identity);
+            Destroy(spark, 1.5f);
+
+
+            Destroy(gameObject);
+        }
+    }
+
 }

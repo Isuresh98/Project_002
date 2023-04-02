@@ -43,4 +43,22 @@ public class AIDestinationSetter : VersionedMonoBehaviour
             }
         }
     }
+    public GameObject coinPrefab;
+    public GameObject SparkFVX;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            // Spawn coin and destroy enemy
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+
+            // Spawn SparkFVX and destroy after 1 second
+            GameObject spark = Instantiate(SparkFVX, transform.position, Quaternion.identity);
+            Destroy(spark, 1.5f);
+
+
+            Destroy(gameObject);
+        }
+    }
 }
