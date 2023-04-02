@@ -136,10 +136,7 @@ public class PlayerController_test : MonoBehaviour
             animTIme = 0;
         }
     }
-    private void OnDestroy()
-    {
-        Destroy(healthSlider.gameObject);
-    }
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
