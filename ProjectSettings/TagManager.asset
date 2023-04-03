@@ -19,6 +19,7 @@ TagManager:
   - Coin
   - SparkVFX
   - GameManager
+  - Boss
   layers:
   - Default
   - TransparentFX

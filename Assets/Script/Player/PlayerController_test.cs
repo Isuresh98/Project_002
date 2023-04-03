@@ -45,6 +45,9 @@ public class PlayerController_test : MonoBehaviour
 
 
     private GameManager gamemanagerScript;
+    private Boss BossScript;
+    [SerializeField]
+    private int BossHelth;
 
     void Start()
     {
@@ -53,6 +56,7 @@ public class PlayerController_test : MonoBehaviour
         // Disable the boost button image at the start
 
         gamemanagerScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        BossScript = GameObject.FindGameObjectWithTag("Bos1").GetComponent<Boss>();
         //ui
         healthSlider.minValue = 0;
         healthSlider.maxValue = maxHealth;
@@ -68,10 +72,74 @@ public class PlayerController_test : MonoBehaviour
       
         
     }
+    public enum GameState
+    {
+        InProgress,
+        Win,
+        GameOver
+    }
+
+    private GameState gameState = GameState.InProgress;
+
+
     void Update()
     {
+        if (BossScript.maxHealth <= 0)
+        {
+            //game win
+            gameState = GameState.Win;
+            print("Game Win");
+        }
+
+        if (maxHealth <= 0)
+        {
+
+            maxHealth = 0;
+            anima.SetBool("isDeth", true);
+            gameState = GameState.GameOver;
+            print("Game Over");
+            // The Player is destroyed game Over
+            Destroy(gameObject, 2.5f);
+
+        }
+
+        switch (gameState)
+        {
+            case GameState.InProgress:
+               
+
+                // do something while the game is in progress
+                break;
+            case GameState.Win:
+                BossScript.maxHealth = 0;
+                isMovingLeft = false;
+                isMovingRight = false;
+                isJumping = false;
+                isbooster = false;
+
+                //animation
+                anima.SetBool("isJet", false);
+                anima.SetBool("isJump", false);
+                anima.SetBool("isRun", false);
 
 
+                // do something when the game is won
+                break;
+            case GameState.GameOver:
+                maxHealth = 0;
+                anima.SetBool("isDeth", true);
+                isMovingLeft = false;
+                isMovingRight = false;
+                isJumping = false;
+                isbooster = false;
+
+                //animation
+                anima.SetBool("isJet", false);
+                anima.SetBool("isJump", false);
+                anima.SetBool("isRun", false);
+                // do something when the game is over
+                break;
+        }
 
         // Calculate the fill percentage of the slider
         float fillPercentage = healthSlider.value / healthSlider.maxValue;
@@ -160,12 +228,7 @@ public class PlayerController_test : MonoBehaviour
 
             maxHealth -= 5;
             healthSlider.value = maxHealth;
-            if (maxHealth <= 0)
-            {
-                // The enemy is destroyed
-                Destroy(gameObject, 2f);
-
-            }
+           
         }
         if (collision.gameObject.CompareTag("EBullet"))
         {
@@ -173,15 +236,12 @@ public class PlayerController_test : MonoBehaviour
             anima.SetBool("isHert", true);
             maxHealth -= 1;
             healthSlider.value = maxHealth;
-            if (maxHealth <= 0)
-            {
-                // The enemy is destroyed
-                Destroy(gameObject, 2f);
-
-            }
+            
         }
         if (collision.gameObject.CompareTag("Coin"))
         {
+         
+
             Destroy(collision.gameObject);
             CoinAmount++;
             gamemanagerScript.CurrentCoinAmount += 1;
@@ -282,10 +342,7 @@ public class PlayerController_test : MonoBehaviour
        
         anima.SetBool("isJet", false);
     }
-    private void OnBecameInvisible()
-    {
-       
-    }
+   
 
 }
 
