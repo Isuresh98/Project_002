@@ -155,9 +155,10 @@ public class PlayerController_test : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EBosBullet"))
         {
-            
 
-            maxHealth -=5;
+            anima.SetBool("isHert", true);
+
+            maxHealth -= 5;
             healthSlider.value = maxHealth;
             if (maxHealth <= 0)
             {
@@ -169,7 +170,7 @@ public class PlayerController_test : MonoBehaviour
         if (collision.gameObject.CompareTag("EBullet"))
         {
             Destroy(collision.gameObject);
-
+            anima.SetBool("isHert", true);
             maxHealth -= 1;
             healthSlider.value = maxHealth;
             if (maxHealth <= 0)
@@ -190,21 +191,28 @@ public class PlayerController_test : MonoBehaviour
 
     }
 
-    
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Boundry"))
         {
-            
+
             BosUI.SetActive(true);
             LBounsON.SetActive(true);
 
         }
-        
+        if (collision.gameObject.CompareTag("EBosBullet"))
+        {
+
+            anima.SetBool("isHert", false);
+
+        }
+        if (collision.gameObject.CompareTag("EBullet"))
+        {
+            
+            anima.SetBool("isHert", false);
+        }
     }
-
-  
-
     public void MoveLeftButtonDown()
     {
         isMovingLeft = true;
