@@ -40,14 +40,19 @@ public class PlayerController_test : MonoBehaviour
 
     private GameObject BosUI;
     private GameObject LBounsON;
+    public int CoinAmount;
+    public int CurrentCoinAmount;
+
+
+    private GameManager gamemanagerScript;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
         // Disable the boost button image at the start
-  
 
+        gamemanagerScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         //ui
         healthSlider.minValue = 0;
         healthSlider.maxValue = maxHealth;
@@ -57,8 +62,16 @@ public class PlayerController_test : MonoBehaviour
         BosUI.SetActive(false);
         LBounsON.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+      
+        
+    }
     void Update()
     {
+
+
 
         // Calculate the fill percentage of the slider
         float fillPercentage = healthSlider.value / healthSlider.maxValue;
@@ -166,11 +179,18 @@ public class PlayerController_test : MonoBehaviour
 
             }
         }
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            CoinAmount++;
+            gamemanagerScript.CurrentCoinAmount += 1;
 
+
+        }
 
     }
 
-    public int CoinAmount;
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Boundry"))
@@ -180,12 +200,7 @@ public class PlayerController_test : MonoBehaviour
             LBounsON.SetActive(true);
 
         }
-        if (collision.gameObject.CompareTag("Coin"))
-        {
-            Destroy(collision.gameObject);
-            CoinAmount++;
-           
-        }
+        
     }
 
   

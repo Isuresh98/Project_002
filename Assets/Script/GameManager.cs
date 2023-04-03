@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     private GameObject ChekPoint;
     private Collider2D CheakPointCollider;
-    // Start is called before the first frame update
+    public int CurrentCoinAmount;
+
     void Start()
     {
         ChekPoint = GameObject.FindGameObjectWithTag("Boundry");
@@ -14,6 +16,18 @@ public class GameManager : MonoBehaviour
 
         CheakPointCollider.isTrigger = true;
 
+
+        CurrentCoinAmount = PlayerPrefs.GetInt("Coins", 0);
     }
 
+    void Update()
+    {
+    }
+
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("Coins", CurrentCoinAmount);
+        PlayerPrefs.Save();
+    }
+    
 }

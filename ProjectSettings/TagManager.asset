@@ -18,6 +18,7 @@ TagManager:
   - LBounsON
   - Coin
   - SparkVFX
+  - GameManager
   layers:
   - Default
   - TransparentFX
