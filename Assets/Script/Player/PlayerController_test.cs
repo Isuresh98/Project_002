@@ -49,6 +49,10 @@ public class PlayerController_test : MonoBehaviour
     [SerializeField]
     private int BossHelth;
 
+    //end transform
+    public Transform targetPoint;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -120,10 +124,14 @@ public class PlayerController_test : MonoBehaviour
                 //animation
                 anima.SetBool("isJet", false);
                 anima.SetBool("isJump", false);
-                anima.SetBool("isRun", false);
+                anima.SetBool("isRun", true);
 
+                // move the player towards the target point
+                transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 
                 // do something when the game is won
+              
+
                 break;
             case GameState.GameOver:
                 maxHealth = 0;
