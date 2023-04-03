@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerController_test : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -129,8 +130,13 @@ public class PlayerController_test : MonoBehaviour
                 // move the player towards the target point
                 transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 
-                // do something when the game is won
-              
+                // check if the player has reached the target point
+                if (transform.position.x >= targetPoint.position.x)
+                {
+                    // load the next scene
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+               
 
                 break;
             case GameState.GameOver:
