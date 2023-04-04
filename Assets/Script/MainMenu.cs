@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject MainPannel;
+    public GameObject LevelPannel;
     public string url;
     void Start()
     {
+        LevelPannel.SetActive(false);
+        MainPannel.SetActive(true);
     }
 
     void Update()
@@ -25,5 +29,18 @@ public class MainMenu : MonoBehaviour
     public void OpenURL()
     {
         Application.OpenURL(url);
+    }
+    public void LevelPannelOpen()
+    {
+        MainPannel.SetActive(false);
+        LevelPannel.SetActive(true);
+       
+    }
+
+    public void MainPannelOpen()
+    {
+        MainPannel.SetActive(true);
+        LevelPannel.SetActive(false);
+
     }
 }

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private GameObject ChekPoint;
     private Collider2D CheakPointCollider;
     public int CurrentCoinAmount;
+    public string url;
 
     void Start()
     {
@@ -29,5 +31,13 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Coins", CurrentCoinAmount);
         PlayerPrefs.Save();
     }
-    
+    public void Home()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+    public void OpenURL()
+    {
+        Application.OpenURL(url);
+    }
 }
