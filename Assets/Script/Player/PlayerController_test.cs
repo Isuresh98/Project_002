@@ -21,7 +21,7 @@ public class PlayerController_test : MonoBehaviour
 
     // Animation
     private Animator anima;
-    [SerializeField] private float animTime;
+    
 
     // Jetpack
     public float jetpackForce = 5f;
@@ -272,7 +272,7 @@ public class PlayerController_test : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
-            animTime = 0;
+          
         }
     }
    
