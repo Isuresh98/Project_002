@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string url;
     void Start()
     {
     }
@@ -19,5 +20,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
 
+    }
+
+    public void OpenURL()
+    {
+        Application.OpenURL(url);
     }
 }
