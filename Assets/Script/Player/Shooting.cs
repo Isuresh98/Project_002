@@ -16,9 +16,16 @@ public class Shooting : MonoBehaviour
 
     // animation
     private Animator anim;
+
+    //audio
+    public AudioSource audioSource;
+    public AudioClip ShootA;
     // Start is called before the first frame update
     void Start()
     {
+        //audio
+        audioSource = GetComponent<AudioSource>();
+
         anim = GetComponent<Animator>();
         // Shooting
         bulletPool = new List<GameObject>();
@@ -61,6 +68,8 @@ public class Shooting : MonoBehaviour
             {
                 if (!bulletPool[i].activeInHierarchy)
                 {
+                    audioSource.clip = ShootA;
+                    audioSource.PlayOneShot(ShootA);
                     anim.SetTrigger("isShoot1");
                     bulletPool[i].SetActive(true);
                     bulletPool[i].transform.position = firePoint.position;

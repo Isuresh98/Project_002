@@ -16,9 +16,15 @@ public class EbossShoot : MonoBehaviour
     private float lastShootTime = 0f;
     public float shootingDistance = 10f;
 
+    //audio
+    public AudioSource audioSource;
+    public AudioClip ShootA;
+    public AudioClip HurtA;
+
     private void Start()
     {
-        
+        //audio
+        audioSource = GetComponent<AudioSource>();
 
         // Find the player object with the "Player" tag
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -46,7 +52,8 @@ public class EbossShoot : MonoBehaviour
                 Vector2 direction = (player.position - bulletSpawn.position).normalized;
                 bulletRb.velocity = direction * bulletSpeed;
                 Destroy(bullet, 3f);
-
+                audioSource.clip = ShootA;
+                audioSource.PlayOneShot(ShootA);
                 // Update the last shoot time
                 lastShootTime = Time.time;
             }

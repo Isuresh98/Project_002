@@ -12,7 +12,10 @@ public class Boss : MonoBehaviour
     public Image fillImage;
 
 
-    
+    //audio
+    public AudioSource audioSource;
+    public AudioClip HurtA;
+
 
     public GameObject sparkPrefab;
     public Transform[] sparkSpawnPoints; // an array of spawn points to choose from
@@ -22,6 +25,10 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //audio
+        audioSource = GetComponent<AudioSource>();
+
+
         healthSlider.minValue = 0;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = maxHealth;
@@ -60,8 +67,9 @@ public class Boss : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-           
 
+            audioSource.clip = HurtA;
+            audioSource.PlayOneShot(HurtA);
             maxHealth--;
             healthSlider.value = maxHealth;
             // Spawn SparkFVX and destroy after 1 second

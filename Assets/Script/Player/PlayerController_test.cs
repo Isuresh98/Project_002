@@ -55,8 +55,21 @@ public class PlayerController_test : MonoBehaviour
     public GameObject gameWinPanel;
     public GameObject controlPanel;
 
+    //audio
+    public AudioSource audioSource;
+    public AudioClip jumpA;
+    public AudioClip HurtA;
+    public AudioClip BoosterA;
+    public AudioClip GameOverA;
+    public AudioClip GameWinA; 
+    public AudioClip CoinA; 
+
     void Start()
     {
+        //audio
+        audioSource = GetComponent<AudioSource>();
+
+
         // Get the Rigidbody2D and Animator components
         rb = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
@@ -147,6 +160,9 @@ public class PlayerController_test : MonoBehaviour
                 gameWinPanel.SetActive(true);
                 controlPanel.SetActive(false);
 
+                //audio
+                audioSource.clip = GameWinA;
+                audioSource.Play();
                 // move the player towards the target point
                 transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 
@@ -175,6 +191,10 @@ public class PlayerController_test : MonoBehaviour
                 gameOverPanel.SetActive(true);
                 gameWinPanel.SetActive(false);
                 controlPanel.SetActive(false);
+
+                //audio
+                audioSource.clip = GameOverA;
+                audioSource.Play();
                 // do something when the game is over
                 break;
         }
@@ -263,23 +283,31 @@ public class PlayerController_test : MonoBehaviour
         {
 
             anima.SetBool("isHert", true);
-
+            //audio
+            audioSource.clip = HurtA;
+            audioSource.Play();
             maxHealth -= 5;
             healthSlider.value = maxHealth;
            
         }
         if (collision.gameObject.CompareTag("EBullet"))
         {
-            Destroy(collision.gameObject);
+            
             anima.SetBool("isHert", true);
+            //audio
+            audioSource.clip = HurtA;
+            audioSource.Play();
             maxHealth -= 1;
             healthSlider.value = maxHealth;
             
+
         }
         if (collision.gameObject.CompareTag("Coin"))
         {
-         
 
+            //audio
+            audioSource.clip = CoinA;
+            audioSource.Play();
             Destroy(collision.gameObject);
             coinAmount++;
             gameManagerScript.CurrentCoinAmount += 1;
@@ -303,14 +331,30 @@ public class PlayerController_test : MonoBehaviour
         {
 
             anima.SetBool("isHert", false);
+            //audio
+            audioSource.clip = HurtA;
+            audioSource.Stop();
 
         }
         if (collision.gameObject.CompareTag("EBullet"))
         {
-            
+            Destroy(collision.gameObject);
             anima.SetBool("isHert", false);
+
+            //audio
+            audioSource.clip = HurtA;
+            audioSource.Stop();
         }
-    }
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+
+            //audio
+            audioSource.clip = CoinA;
+            audioSource.Play();
+        }
+
+     }
+
     public void MoveLeftButtonDown()
     {
         isMovingLeft = true;
@@ -344,8 +388,9 @@ public class PlayerController_test : MonoBehaviour
         {
             isJumping = true;
             hasJumped = false;
+            audioSource.clip = jumpA;
+            audioSource.Play();
 
-           
         }
       
     }
@@ -353,7 +398,8 @@ public class PlayerController_test : MonoBehaviour
     public void JumpButtonUp()
     {
         isJumping = false;
-      
+        audioSource.clip = jumpA;
+        audioSource.Stop();
 
     }
 
@@ -371,6 +417,8 @@ public class PlayerController_test : MonoBehaviour
        
         anima.SetBool("isJet", true);
         anima.SetBool("isJump", false);
+        audioSource.clip = BoosterA;
+        audioSource.Play();
     }
 
     // Called when the boost button is released
@@ -379,6 +427,8 @@ public class PlayerController_test : MonoBehaviour
         isBoosterOn = false;
        
         anima.SetBool("isJet", false);
+        audioSource.clip = BoosterA;
+        audioSource.Stop();
     }
    
 

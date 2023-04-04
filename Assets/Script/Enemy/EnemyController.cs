@@ -9,11 +9,17 @@ public class EnemyController : MonoBehaviour
     private bool facingRight = true;
     private Animator enemyAnima;
 
+
+    //audio
+    public AudioSource audioSource;
+   
+    public AudioClip HurtA;
     private void Start()
     {
         enemyAnima = GetComponent<Animator>();
-      
 
+        //audio
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -59,6 +65,8 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            audioSource.clip = HurtA;
+            audioSource.PlayOneShot(HurtA);
             // Spawn coin and destroy enemy
             Instantiate(coinPrefab, transform.position, Quaternion.identity);
 
@@ -67,7 +75,7 @@ public class EnemyController : MonoBehaviour
             Destroy(spark, 1.5f);
 
 
-            Destroy(gameObject);
+            Destroy(gameObject,0.2f);
         }
     }
 
