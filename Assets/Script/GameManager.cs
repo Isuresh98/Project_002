@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     private Collider2D CheakPointCollider;
     public int CurrentCoinAmount;
     public string url;
-
+    public Text coinText;
     void Start()
     {
         ChekPoint = GameObject.FindGameObjectWithTag("Boundry");
@@ -18,12 +19,15 @@ public class GameManager : MonoBehaviour
 
         CheakPointCollider.isTrigger = true;
 
-
+        coinText.text = CurrentCoinAmount.ToString();
         CurrentCoinAmount = PlayerPrefs.GetInt("Coins", 0);
     }
 
     void Update()
     {
+        // Update the level coin amount in the LevelcoinText
+
+        coinText.text = CurrentCoinAmount.ToString();
     }
 
     void OnApplicationQuit()
@@ -39,5 +43,9 @@ public class GameManager : MonoBehaviour
     public void OpenURL()
     {
         Application.OpenURL(url);
+    }
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

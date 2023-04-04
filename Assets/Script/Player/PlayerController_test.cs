@@ -54,6 +54,10 @@ public class PlayerController_test : MonoBehaviour
     public Transform targetPoint;
 
 
+    //
+    public GameObject GameOverPannel;
+    public GameObject GameWin;
+    public GameObject ContrallPannel;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -70,6 +74,10 @@ public class PlayerController_test : MonoBehaviour
         LBounsON = GameObject.FindGameObjectWithTag("LBounsON");
         BosUI.SetActive(false);
         LBounsON.SetActive(false);
+
+        GameOverPannel.SetActive(false);
+        GameWin.SetActive(false);
+        ContrallPannel.SetActive(true);
     }
 
     private void OnDestroy()
@@ -111,7 +119,11 @@ public class PlayerController_test : MonoBehaviour
         switch (gameState)
         {
             case GameState.InProgress:
-               
+                //UI
+                GameOverPannel.SetActive(false);
+                GameWin.SetActive(false);
+                ContrallPannel.SetActive(true);
+
 
                 // do something while the game is in progress
                 break;
@@ -126,6 +138,11 @@ public class PlayerController_test : MonoBehaviour
                 anima.SetBool("isJet", false);
                 anima.SetBool("isJump", false);
                 anima.SetBool("isRun", true);
+
+                //UI
+                GameOverPannel.SetActive(false);
+                GameWin.SetActive(true);
+                ContrallPannel.SetActive(false);
 
                 // move the player towards the target point
                 transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
@@ -151,6 +168,10 @@ public class PlayerController_test : MonoBehaviour
                 anima.SetBool("isJet", false);
                 anima.SetBool("isJump", false);
                 anima.SetBool("isRun", false);
+                //UI
+                GameOverPannel.SetActive(true);
+                GameWin.SetActive(false);
+                ContrallPannel.SetActive(false);
                 // do something when the game is over
                 break;
         }
