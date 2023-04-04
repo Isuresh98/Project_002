@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerController_test : MonoBehaviour
 {
+    // Rigidbody and movement
+    private Rigidbody2D rb;
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public bool isGrounded = false;
@@ -10,75 +12,76 @@ public class PlayerController_test : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask whatIsGround;
 
-    private Rigidbody2D rb;
-
+    // Movement flags
     private bool facingRight = true;
     private bool isMovingLeft = false;
     private bool isMovingRight = false;
     private bool isJumping = false;
     private bool hasJumped = false;
 
-    //animation
+    // Animation
     private Animator anima;
-    [SerializeField]
-    float animTIme;
+    [SerializeField] private float animTime;
 
-    //jetpak
+    // Jetpack
     public float jetpackForce = 5f;
     public float maxFuel = 100f;
     public float fuelBurnRate = 10f;
-
     private float currentFuel;
-    // These variables will hold the references to the UI buttons that control the jetpack
-   
-    bool isbooster;
+    public Button jetpackButton;
+    public Button refillButton;
+    private bool isBoosterOn;
 
-    //UI Heth and other
+    // Health and UI
     public int maxHealth = 15;
     public Slider healthSlider;
     public Gradient gradient;
     public Image fillImage;
+    private GameObject bossUI;
+    private GameObject bonusOnUI;
+    public int coinAmount;
+    public int currentCoinAmount;
 
-    private GameObject BosUI;
-    private GameObject LBounsON;
-    public int CoinAmount;
-    public int CurrentCoinAmount;
+    // Boss and game state
+    private GameManager gameManagerScript;
+    private Boss bossScript;
+    [SerializeField] private int bossHealth;
 
-
-    private GameManager gamemanagerScript;
-    private Boss BossScript;
-    [SerializeField]
-    private int BossHelth;
-
-    //end transform
+    // End level
     public Transform targetPoint;
 
+    // Game over and UI
+    public GameObject gameOverPanel;
+    public GameObject gameWinPanel;
+    public GameObject controlPanel;
 
-    //
-    public GameObject GameOverPannel;
-    public GameObject GameWin;
-    public GameObject ContrallPannel;
     void Start()
     {
+        // Get the Rigidbody2D and Animator components
         rb = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
+
         // Disable the boost button image at the start
 
-        gamemanagerScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        BossScript = GameObject.FindGameObjectWithTag("Bos1").GetComponent<Boss>();
-        //ui
+        // Get the GameManager and Boss components
+        gameManagerScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        bossScript = GameObject.FindGameObjectWithTag("Bos1").GetComponent<Boss>();
+
+        // Set up the UI
         healthSlider.minValue = 0;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = maxHealth;
-        BosUI = GameObject.FindGameObjectWithTag("BosUI");
-        LBounsON = GameObject.FindGameObjectWithTag("LBounsON");
-        BosUI.SetActive(false);
-        LBounsON.SetActive(false);
+        bossUI = GameObject.FindGameObjectWithTag("BosUI");
+        bonusOnUI = GameObject.FindGameObjectWithTag("LBounsON");
+        bossUI.SetActive(false);
+        bonusOnUI.SetActive(false);
 
-        GameOverPannel.SetActive(false);
-        GameWin.SetActive(false);
-        ContrallPannel.SetActive(true);
+        // Disable the game over and win screens, and enable the controls panel
+        gameOverPanel.SetActive(false);
+        gameWinPanel.SetActive(false);
+        controlPanel.SetActive(true);
     }
+
 
     private void OnDestroy()
     {
@@ -97,7 +100,7 @@ public class PlayerController_test : MonoBehaviour
 
     void Update()
     {
-        if (BossScript.maxHealth <= 0)
+        if (bossScript.maxHealth <= 0)
         {
             //game win
             gameState = GameState.Win;
@@ -120,19 +123,19 @@ public class PlayerController_test : MonoBehaviour
         {
             case GameState.InProgress:
                 //UI
-                GameOverPannel.SetActive(false);
-                GameWin.SetActive(false);
-                ContrallPannel.SetActive(true);
+                gameOverPanel.SetActive(false);
+                gameWinPanel.SetActive(false);
+                controlPanel.SetActive(true);
 
 
                 // do something while the game is in progress
                 break;
             case GameState.Win:
-                BossScript.maxHealth = 0;
+                bossScript.maxHealth = 0;
                 isMovingLeft = false;
                 isMovingRight = false;
                 isJumping = false;
-                isbooster = false;
+                isBoosterOn = false;
 
                 //animation
                 anima.SetBool("isJet", false);
@@ -140,9 +143,9 @@ public class PlayerController_test : MonoBehaviour
                 anima.SetBool("isRun", true);
 
                 //UI
-                GameOverPannel.SetActive(false);
-                GameWin.SetActive(true);
-                ContrallPannel.SetActive(false);
+                gameOverPanel.SetActive(false);
+                gameWinPanel.SetActive(true);
+                controlPanel.SetActive(false);
 
                 // move the player towards the target point
                 transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
@@ -162,16 +165,16 @@ public class PlayerController_test : MonoBehaviour
                 isMovingLeft = false;
                 isMovingRight = false;
                 isJumping = false;
-                isbooster = false;
+                isBoosterOn = false;
 
                 //animation
                 anima.SetBool("isJet", false);
                 anima.SetBool("isJump", false);
                 anima.SetBool("isRun", false);
                 //UI
-                GameOverPannel.SetActive(true);
-                GameWin.SetActive(false);
-                ContrallPannel.SetActive(false);
+                gameOverPanel.SetActive(true);
+                gameWinPanel.SetActive(false);
+                controlPanel.SetActive(false);
                 // do something when the game is over
                 break;
         }
@@ -187,7 +190,7 @@ public class PlayerController_test : MonoBehaviour
     void FixedUpdate()
     {
         //jetpak
-        if (isbooster)
+        if (isBoosterOn)
         {
             rb.AddForce(new Vector2(0f, jetpackForce), ForceMode2D.Force);
          
@@ -226,7 +229,7 @@ public class PlayerController_test : MonoBehaviour
            
         }
 
-        if (!isGrounded&&!isbooster)
+        if (!isGrounded&&!isBoosterOn)
         {
             anima.SetBool("isJump", true);
           
@@ -249,7 +252,7 @@ public class PlayerController_test : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
-            animTIme = 0;
+            animTime = 0;
         }
     }
    
@@ -278,8 +281,8 @@ public class PlayerController_test : MonoBehaviour
          
 
             Destroy(collision.gameObject);
-            CoinAmount++;
-            gamemanagerScript.CurrentCoinAmount += 1;
+            coinAmount++;
+            gameManagerScript.CurrentCoinAmount += 1;
 
 
         }
@@ -292,8 +295,8 @@ public class PlayerController_test : MonoBehaviour
         if (collision.gameObject.CompareTag("Boundry"))
         {
 
-            BosUI.SetActive(true);
-            LBounsON.SetActive(true);
+            bossUI.SetActive(true);
+            bonusOnUI.SetActive(true);
 
         }
         if (collision.gameObject.CompareTag("EBosBullet"))
@@ -364,7 +367,7 @@ public class PlayerController_test : MonoBehaviour
     // Called when the boost button is pressed
     public void BoostButtonPressed()
     {
-        isbooster = true;
+        isBoosterOn = true;
        
         anima.SetBool("isJet", true);
         anima.SetBool("isJump", false);
@@ -373,7 +376,7 @@ public class PlayerController_test : MonoBehaviour
     // Called when the boost button is released
     public void BoostButtonReleased()
     {
-        isbooster = false;
+        isBoosterOn = false;
        
         anima.SetBool("isJet", false);
     }
