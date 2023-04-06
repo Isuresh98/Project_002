@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class PlayerController_test : MonoBehaviour
+public class PlayerController_Bike : MonoBehaviour
 {
     // Rigidbody and movement
     private Rigidbody2D rb;
+
+    public Rigidbody2D FronTire;
+    public Rigidbody2D BackTire;
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public bool isGrounded = false;
@@ -153,7 +156,7 @@ public class PlayerController_test : MonoBehaviour
                 //animation
                 anima.SetBool("isJet", false);
                 anima.SetBool("isJump", false);
-                anima.SetBool("isRun", true);
+                anima.SetBool("isRide", true);
 
                 //UI
                 gameOverPanel.SetActive(false);
@@ -186,7 +189,7 @@ public class PlayerController_test : MonoBehaviour
                 //animation
                 anima.SetBool("isJet", false);
                 anima.SetBool("isJump", false);
-                anima.SetBool("isRun", false);
+                anima.SetBool("isRide", false);
                 //UI
                 gameOverPanel.SetActive(true);
                 gameWinPanel.SetActive(false);
@@ -221,21 +224,27 @@ public class PlayerController_test : MonoBehaviour
 
         if (isMovingLeft)
         {
-            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+           FronTire.AddTorque(moveSpeed * Time.fixedDeltaTime);
+            BackTire.AddTorque(moveSpeed * Time.fixedDeltaTime);
+            //  rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
 
-            if (facingRight)
+         /*   if (facingRight)
             {
                 Flip();
             }
+         */
         }
         else if (isMovingRight)
         {
-            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            FronTire.AddTorque(-moveSpeed * Time.fixedDeltaTime);
+            BackTire.AddTorque(-moveSpeed * Time.fixedDeltaTime);
 
-            if (!facingRight)
-            {
-                Flip();
-            }
+            //  rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+
+            /*  if (!facingRight)
+             {
+                 Flip();
+             } */
         }
         else
         {
@@ -358,27 +367,27 @@ public class PlayerController_test : MonoBehaviour
     public void MoveLeftButtonDown()
     {
         isMovingLeft = true;
-        anima.SetBool("isRun", true);
+        anima.SetBool("isRide", true);
     }
 
     public void MoveLeftButtonUp()
     {
         isMovingLeft = false;
-        anima.SetBool("isRun", false);
+        anima.SetBool("isRide", false);
 
     }
 
     public void MoveRightButtonDown()
     {
         isMovingRight = true;
-        anima.SetBool("isRun", true);
+        anima.SetBool("isRide", true);
 
     }
 
     public void MoveRightButtonUp()
     {
         isMovingRight = false;
-        anima.SetBool("isRun", false);
+        anima.SetBool("isRide", false);
 
     }
 
