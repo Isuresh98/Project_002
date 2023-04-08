@@ -150,12 +150,10 @@ public class PlayerController_Bike : MonoBehaviour
                 
                 isMovingLeft = false;
                 isMovingRight = false;
-                isJumping = false;
-                isBoosterOn = false;
+                
 
                 //animation
-                anima.SetBool("isJet", false);
-                anima.SetBool("isJump", false);
+                
                 anima.SetBool("isRide", true);
 
                 //UI
@@ -167,7 +165,7 @@ public class PlayerController_Bike : MonoBehaviour
                 audioSource.clip = GameWinA;
                 audioSource.Play();
                 // move the player towards the target point
-                transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
+                transform.Translate(Vector3.right * Time.deltaTime * 20);
 
                 // check if the player has reached the target point
                 if (transform.position.x >= targetPoint.position.x)
