@@ -147,7 +147,7 @@ public class PlayerController_Bike : MonoBehaviour
                 // do something while the game is in progress
                 break;
             case GameState.Win:
-                bossScript.maxHealth = 0;
+                
                 isMovingLeft = false;
                 isMovingRight = false;
                 isJumping = false;
