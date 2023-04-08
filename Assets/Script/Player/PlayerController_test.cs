@@ -265,6 +265,12 @@ public class PlayerController_test : MonoBehaviour
             anima.SetBool("isJump", false);
             
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            maxHealth -= 2;
+
+
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -273,6 +279,12 @@ public class PlayerController_test : MonoBehaviour
         {
             isGrounded = false;
           
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            maxHealth -= 2;
+
+
         }
     }
    
@@ -311,6 +323,11 @@ public class PlayerController_test : MonoBehaviour
             Destroy(collision.gameObject);
             coinAmount++;
             gameManagerScript.CurrentCoinAmount += 1;
+
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            maxHealth -= 2;
 
 
         }
