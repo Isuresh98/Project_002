@@ -59,11 +59,18 @@ public class PlayerController_test : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip jumpA;
     public AudioClip HurtA;
+    
     public AudioClip BoosterA;
     public AudioClip GameOverA;
-    public AudioClip GameWinA; 
+    public AudioClip GameOverAV;
+    public AudioClip GameWinA;
+    public AudioClip GameWinAV;
     public AudioClip CoinA; 
+    public AudioClip AttacV;
 
+    //enemy
+    public float attackingDistance;
+   
     void Start()
     {
         //audio
@@ -79,6 +86,7 @@ public class PlayerController_test : MonoBehaviour
         // Get the GameManager and Boss components
         gameManagerScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         bossScript = GameObject.FindGameObjectWithTag("Bos1").GetComponent<Boss>();
+        
 
         // Set up the UI
         healthSlider.minValue = 0;
@@ -113,6 +121,25 @@ public class PlayerController_test : MonoBehaviour
 
     void Update()
     {
+        // Get all enemy game objects in the scene
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if (distance <= attackingDistance)
+            {
+                // Get the audio source component for the enemy
+                AudioSource audioSource = enemy.GetComponent<AudioSource>();
+
+                if (audioSource != null)
+                {
+                    audioSource.clip = AttacV;
+                    audioSource.PlayOneShot(AttacV);
+                }
+            }
+        }
+
         if (bossScript.maxHealth <= 0)
         {
             //game win
@@ -161,8 +188,9 @@ public class PlayerController_test : MonoBehaviour
                 controlPanel.SetActive(false);
 
                 //audio
-                audioSource.clip = GameWinA;
-                audioSource.Play();
+               
+                audioSource.clip = GameWinAV;
+                audioSource.PlayOneShot(GameWinAV);
                 // move the player towards the target point
                 transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 
@@ -193,8 +221,11 @@ public class PlayerController_test : MonoBehaviour
                 controlPanel.SetActive(false);
 
                 //audio
-                audioSource.clip = GameOverA;
-                audioSource.Play();
+              
+                audioSource.clip = GameOverAV;
+                audioSource.PlayOneShot(GameWinAV);
+                
+
                 // do something when the game is over
                 break;
         }
@@ -308,6 +339,7 @@ public class PlayerController_test : MonoBehaviour
             anima.SetBool("isHert", true);
             //audio
             audioSource.clip = HurtA;
+            
             audioSource.Play();
             maxHealth -= 1;
             healthSlider.value = maxHealth;

@@ -2523,7 +2523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 928093136}
   moveSpeed: 4
-  activeDistance: 25
+  activeDistance: 30
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
@@ -5206,6 +5206,84 @@ Transform:
   m_Father: {fileID: 187616081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &689339496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689339497}
+  - component: {fileID: 689339499}
+  - component: {fileID: 689339498}
+  m_Layer: 5
+  m_Name: Song Place
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &689339497
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689339496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7667000822321037970}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 154, y: 33}
+  m_SizeDelta: {x: 249.07364, y: 58.173462}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &689339498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689339496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 42196ac30fa4e114e9abdf76a6d00d74, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 54
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 9999999999
+--- !u!222 &689339499
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689339496}
+  m_CullTransparentMesh: 0
 --- !u!1 &691090561
 GameObject:
   m_ObjectHideFlags: 0
@@ -6969,8 +7047,12 @@ MonoBehaviour:
   HurtA: {fileID: 8300000, guid: 5b5be482c89bc9043a7fad7c720dcf9b, type: 3}
   BoosterA: {fileID: 8300000, guid: 455851303b9cef04391f79a87f659734, type: 3}
   GameOverA: {fileID: 8300000, guid: d99f57c60435aa04fba8714407d72476, type: 3}
+  GameOverAV: {fileID: 8300000, guid: bd115df1ac6fee342b84fa3385dde1a3, type: 3}
   GameWinA: {fileID: 8300000, guid: 15444a627faf4034baa969fafd89e65d, type: 3}
+  GameWinAV: {fileID: 8300000, guid: 9eb84e52a25c7d442a5dc901207124fb, type: 3}
   CoinA: {fileID: 8300000, guid: 17d19f60c360da543a7b6c6571c0c2b6, type: 3}
+  AttacV: {fileID: 8300000, guid: 65855ab86fec51644922a4a782a6b39f, type: 3}
+  attackingDistance: 30
 --- !u!95 &928093141
 Animator:
   serializedVersion: 3
@@ -11644,15 +11726,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1267069973}
-    - target: {fileID: 2132949193, guid: 063810d484cdc464ca4b8cd153b3d016, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1483621452894446687, guid: 063810d484cdc464ca4b8cd153b3d016,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7667000821389800128, guid: 063810d484cdc464ca4b8cd153b3d016,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11843,18 +11916,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 928093140}
-    - target: {fileID: 7747306637559073036, guid: 063810d484cdc464ca4b8cd153b3d016,
-        type: 3}
-      propertyPath: m_Name
-      value: gamewin
-      objectReference: {fileID: 0}
-    - target: {fileID: 8605561062895278957, guid: 063810d484cdc464ca4b8cd153b3d016,
-        type: 3}
-      propertyPath: m_Text
-      value: Boss died
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063810d484cdc464ca4b8cd153b3d016, type: 3}
+--- !u!224 &7667000822321037970 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7667000821957186650, guid: 063810d484cdc464ca4b8cd153b3d016,
+    type: 3}
+  m_PrefabInstance: {fileID: 7667000822321037969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7667000822321037980 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7667000821733332710, guid: 063810d484cdc464ca4b8cd153b3d016,
