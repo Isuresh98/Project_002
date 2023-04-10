@@ -208,6 +208,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -590,6 +592,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -973,6 +977,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -1268,6 +1274,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -1653,6 +1661,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -1936,6 +1946,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -2527,6 +2539,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -3186,6 +3200,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -3373,6 +3389,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -3656,6 +3674,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -3969,6 +3989,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -4812,6 +4834,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -5602,6 +5626,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -6191,6 +6217,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -7352,6 +7380,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -8169,6 +8199,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -9122,6 +9154,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -9938,6 +9972,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -10221,6 +10257,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -10615,6 +10653,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,
@@ -11087,6 +11127,8 @@ MonoBehaviour:
   stopDistance: 4
   audioSource: {fileID: 0}
   HurtA: {fileID: 8300000, guid: 87e28faad2db4c247ae1bf86f911ff79, type: 3}
+  AttakV: {fileID: 0}
+  attackingDistance: 30
   coinPrefab: {fileID: 5427771882940014384, guid: e69d91ed15b93f04293eda0f220626f8,
     type: 3}
   SparkFVX: {fileID: 9048395107427469300, guid: 5891d15c07fd8084785a1a5b339ea694,

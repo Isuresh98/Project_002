@@ -16,30 +16,30 @@ public class EnemyController : MonoBehaviour
    
     public AudioClip HurtA;
     public AudioClip AttakV;
-   
+    public float attackingDistance;
+
+    bool attakAudio;
+
     private void Start()
     {
         enemyAnima = GetComponent<Animator>();
 
         //audio
         audioSource = GetComponent<AudioSource>();
+        attakAudio = false;
+
     }
 
     void Update()
     {
-        if (distance <= activeDistance)
-        {
-            print("Set Enemy");
-            audioSource.clip = AttakV;
-            audioSource.PlayOneShot(AttakV);
-        }
 
+        AudioPlay();
         enemyAnima.SetBool("isAttact", false);
         // Check if player is within active distance
         distance = Vector2.Distance(transform.position, player.position);
         if (distance < activeDistance)
         {
-            
+            attakAudio = true;
 
             // Face player
             if (player.position.x < transform.position.x && facingRight)
@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
             // Check if enemy is within stop distance
             if (distance > stopDistance)
             {
-                
+                attakAudio = false;
                 // Move towards player
                 transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
                 enemyAnima.SetBool("isAttact", true);
@@ -66,6 +66,16 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    void AudioPlay()
+    {
+        if (attakAudio)
+        {
+            audioSource.clip = AttakV;
+            audioSource.PlayOneShot(AttakV);
+            
+        }
+
+    }
     // Flip the enemy sprite horizontally
     void Flip()
     {

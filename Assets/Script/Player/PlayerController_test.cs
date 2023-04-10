@@ -70,7 +70,7 @@ public class PlayerController_test : MonoBehaviour
 
     //enemy
     public float attackingDistance;
-   
+    private GameObject enemies;
     void Start()
     {
         //audio
@@ -101,6 +101,9 @@ public class PlayerController_test : MonoBehaviour
         gameOverPanel.SetActive(false);
         gameWinPanel.SetActive(false);
         controlPanel.SetActive(true);
+
+        enemies = GameObject.FindGameObjectWithTag("Enemy");
+      //  AudioSource audioSource = enemies.GetComponent<AudioSource>();
     }
 
 
@@ -121,24 +124,9 @@ public class PlayerController_test : MonoBehaviour
 
     void Update()
     {
-        // Get all enemy game objects in the scene
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in enemies)
-        {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-
-            if (distance <= attackingDistance)
-            {
-                // Get the audio source component for the enemy
-                AudioSource audioSource = enemy.GetComponent<AudioSource>();
-
-                if (audioSource != null)
-                {
-                    audioSource.clip = AttacV;
-                    audioSource.PlayOneShot(AttacV);
-                }
-            }
-        }
+       
+           
+        
 
         if (bossScript.maxHealth <= 0)
         {
