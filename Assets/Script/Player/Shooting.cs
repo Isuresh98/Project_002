@@ -6,27 +6,30 @@ using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
-    //shooting
+    // Shooting
     public int bulletPoolSize;
     public List<GameObject> bulletPool;
     public Button shootButton;
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-
-    // animation
+    // Animation
     private Animator anim;
 
-    //audio
+    // Audio
     public AudioSource audioSource;
-    public AudioClip ShootA;
-    // Start is called before the first frame update
+    public AudioClip shootA;
+
+    // LineRenderer
+    public Material laserMaterial;
+
     void Start()
     {
-        //audio
+        // Audio
         audioSource = GetComponent<AudioSource>();
 
         anim = GetComponent<Animator>();
+
         // Shooting
         bulletPool = new List<GameObject>();
         for (int i = 0; i < bulletPoolSize; i++)
@@ -43,8 +46,6 @@ public class Shooting : MonoBehaviour
     void Update()
     {
 
-        // Shooting
-       
     }
 
     public void OnShootButtonClicked()
@@ -55,32 +56,38 @@ public class Shooting : MonoBehaviour
     public void OnShootButtonReleased()
     {
         Shoot(false);
-      //  anim.SetBool("isShoot", false);
     }
+
     public void Shoot(bool buttonPressed)
     {
-        
         if (buttonPressed && bulletPool.Count > 0)
         {
-          //  anim.SetBool("isShoot", true);
-            
             for (int i = 0; i < bulletPool.Count; i++)
             {
                 if (!bulletPool[i].activeInHierarchy)
                 {
-                    audioSource.clip = ShootA;
-                    audioSource.PlayOneShot(ShootA);
+                    audioSource.clip = shootA;
+                    audioSource.PlayOneShot(shootA);
                     anim.SetTrigger("isShoot1");
                     bulletPool[i].SetActive(true);
                     bulletPool[i].transform.position = firePoint.position;
                     bulletPool[i].transform.rotation = firePoint.rotation;
-                   
-                   // 
-                    
+
+                    // Add LineRenderer to the bullet
+                    LineRenderer lineRenderer = bulletPool[i].GetComponent<LineRenderer>();
+                    if (lineRenderer == null)
+                    {
+                        lineRenderer = bulletPool[i].AddComponent<LineRenderer>();
+                    }
+                    lineRenderer.material = laserMaterial;
+                    lineRenderer.widthMultiplier = 0.1f;
+                    lineRenderer.positionCount = 2;
+                    lineRenderer.SetPosition(0, bulletPool[i].transform.position);
+                    lineRenderer.SetPosition(1, bulletPool[i].transform.position + bulletPool[i].transform.right * 10f);
+
                     break;
                 }
             }
-           
         }
     }
 }
