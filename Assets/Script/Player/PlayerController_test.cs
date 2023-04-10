@@ -66,11 +66,22 @@ public class PlayerController_test : MonoBehaviour
     public AudioClip GameWinA;
     public AudioClip GameWinAV;
     public AudioClip CoinA; 
-    public AudioClip AttacV;
+    public AudioClip A1;
+    public AudioClip A2;
+    public AudioClip A3;
+    public AudioClip A4;
+    public AudioClip A5;
+    public AudioClip A6;
+    public AudioClip A7;
+    public AudioClip A8;
+    public AudioClip A9;
+    public AudioClip A10;
+    public AudioClip A11;
+    public AudioClip A12;
 
     //enemy
     public float attackingDistance;
-    private GameObject enemies;
+    private GameObject Boss;
     void Start()
     {
         //audio
@@ -102,7 +113,6 @@ public class PlayerController_test : MonoBehaviour
         gameWinPanel.SetActive(false);
         controlPanel.SetActive(true);
 
-        enemies = GameObject.FindGameObjectWithTag("Enemy");
       //  AudioSource audioSource = enemies.GetComponent<AudioSource>();
     }
 
@@ -124,9 +134,9 @@ public class PlayerController_test : MonoBehaviour
 
     void Update()
     {
+
        
-           
-        
+      
 
         if (bossScript.maxHealth <= 0)
         {
@@ -351,7 +361,66 @@ public class PlayerController_test : MonoBehaviour
 
 
         }
-
+        if (collision.gameObject.CompareTag("1"))
+        {
+            audioSource.clip = A1;
+            audioSource.PlayOneShot(A1);
+        }
+        if (collision.gameObject.CompareTag("2"))
+        {
+            audioSource.clip = A2;
+            audioSource.PlayOneShot(A2);
+        }
+        if (collision.gameObject.CompareTag("3"))
+        {
+            audioSource.clip = A3;
+            audioSource.PlayOneShot(A3);
+        }
+        if (collision.gameObject.CompareTag("4"))
+        {
+            audioSource.clip = A4;
+            audioSource.PlayOneShot(A4);
+        }
+        if (collision.gameObject.CompareTag("5"))
+        {
+            audioSource.clip = A5;
+            audioSource.PlayOneShot(A5);
+        }
+        if (collision.gameObject.CompareTag("6"))
+        {
+            audioSource.clip = A6;
+            audioSource.PlayOneShot(A6);
+        }
+        if (collision.gameObject.CompareTag("7"))
+        {
+            audioSource.clip = A7;
+            audioSource.PlayOneShot(A7);
+        }
+        if (collision.gameObject.CompareTag("8"))
+        {
+            audioSource.clip = A8;
+            audioSource.PlayOneShot(A8);
+        }
+        if (collision.gameObject.CompareTag("9"))
+        {
+            audioSource.clip = A9;
+            audioSource.PlayOneShot(A9);
+        }
+        if (collision.gameObject.CompareTag("10"))
+        {
+            audioSource.clip = A10;
+            audioSource.PlayOneShot(A10);
+        }
+        if (collision.gameObject.CompareTag("11"))
+        {
+            audioSource.clip = A11;
+            audioSource.PlayOneShot(A11);
+        }
+        if (collision.gameObject.CompareTag("12"))
+        {
+            audioSource.clip = A12;
+            audioSource.PlayOneShot(A12);
+        }
     }
 
 
