@@ -374,63 +374,136 @@ public class PlayerController_test : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("1"))
         {
-            audioSource.clip = A1;
-            audioSource.PlayOneShot(A1);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A1;
+                otherAudioSource.PlayOneShot(A1);
+            }
+
         }
         if (collision.gameObject.CompareTag("2"))
         {
-            audioSource.clip = A2;
-            audioSource.PlayOneShot(A2);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A2;
+                otherAudioSource.PlayOneShot(A2);
+            }
         }
         if (collision.gameObject.CompareTag("3"))
         {
-            audioSource.clip = A3;
-            audioSource.PlayOneShot(A3);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A3;
+                otherAudioSource.PlayOneShot(A3);
+            }
         }
         if (collision.gameObject.CompareTag("4"))
         {
-            audioSource.clip = A4;
-            audioSource.PlayOneShot(A4);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A4;
+                otherAudioSource.PlayOneShot(A4);
+            }
         }
         if (collision.gameObject.CompareTag("5"))
         {
-            audioSource.clip = A5;
-            audioSource.PlayOneShot(A5);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A5;
+                otherAudioSource.PlayOneShot(A5);
+            }
         }
         if (collision.gameObject.CompareTag("6"))
         {
-            audioSource.clip = A6;
-            audioSource.PlayOneShot(A6);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A6;
+                otherAudioSource.PlayOneShot(A6);
+            }
         }
         if (collision.gameObject.CompareTag("7"))
         {
-            audioSource.clip = A7;
-            audioSource.PlayOneShot(A7);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A7;
+                otherAudioSource.PlayOneShot(A7);
+            }
         }
         if (collision.gameObject.CompareTag("8"))
         {
-            audioSource.clip = A8;
-            audioSource.PlayOneShot(A8);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A8;
+                otherAudioSource.PlayOneShot(A8);
+            }
         }
         if (collision.gameObject.CompareTag("9"))
         {
-            audioSource.clip = A9;
-            audioSource.PlayOneShot(A9);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A9;
+                otherAudioSource.PlayOneShot(A9);
+            }
         }
         if (collision.gameObject.CompareTag("10"))
         {
-            audioSource.clip = A10;
-            audioSource.PlayOneShot(A10);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A10;
+                otherAudioSource.PlayOneShot(A10);
+            }
         }
         if (collision.gameObject.CompareTag("11"))
         {
-            audioSource.clip = A11;
-            audioSource.PlayOneShot(A11);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A11;
+                otherAudioSource.PlayOneShot(A11);
+            }
         }
         if (collision.gameObject.CompareTag("12"))
         {
-            audioSource.clip = A12;
-            audioSource.PlayOneShot(A12);
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A12;
+                otherAudioSource.PlayOneShot(A12);
+            }
         }
     }
 
