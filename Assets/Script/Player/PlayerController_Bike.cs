@@ -78,6 +78,7 @@ public class PlayerController_Bike : MonoBehaviour
     public AudioClip A10;
     public AudioClip A11;
     public AudioClip A12;
+    public AudioClip BikeSound;
     private bool isGameWinSoundPlayed = false;
     private bool isGameOverSoundPlayed = false;
     void Start()
@@ -521,12 +522,16 @@ public class PlayerController_Bike : MonoBehaviour
 
     public void MoveLeftButtonDown()
     {
+        audioSource.clip = BikeSound;
+        audioSource.Play();
         isMovingLeft = true;
         anima.SetBool("isRide", true);
     }
 
     public void MoveLeftButtonUp()
     {
+        audioSource.clip = BikeSound;
+        audioSource.Stop();
         isMovingLeft = false;
         anima.SetBool("isRide", false);
 
@@ -534,6 +539,8 @@ public class PlayerController_Bike : MonoBehaviour
 
     public void MoveRightButtonDown()
     {
+        audioSource.clip = BikeSound;
+        audioSource.Play();
         isMovingRight = true;
         anima.SetBool("isRide", true);
 
@@ -541,6 +548,8 @@ public class PlayerController_Bike : MonoBehaviour
 
     public void MoveRightButtonUp()
     {
+        audioSource.clip = BikeSound;
+        audioSource.Stop();
         isMovingRight = false;
         anima.SetBool("isRide", false);
 
