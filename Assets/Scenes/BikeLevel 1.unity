@@ -128228,10 +128228,10 @@ PrefabInstance:
     - target: {fileID: 5299119617008847735, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
       propertyPath: m_Text
-      value: 'LIVE TIME - AL COIN & IZZY- 2 DRIPPY MASTER2_01
+      value: 'LIVE TIME - AL COIN-SORRY MASTER 2022_01
 
-        The rest of
-        songs are by me AL COIN'
+        The rest of songs
+        are by me AL COIN'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1, type: 3}
@@ -129631,7 +129631,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: de47a36a67c770540a3aa7801572da22, type: 3}
+      objectReference: {fileID: 8300000, guid: 20aa278ef1a21a84b902edfd240b7288, type: 3}
     - target: {fileID: 1637843975205283494, guid: bcca9cef4dcca3144b506b07d69ef9db,
         type: 3}
       propertyPath: coinText
