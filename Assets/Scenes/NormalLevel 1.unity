@@ -12861,7 +12861,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 052bb14e1d108de45b8289ab670496ac, type: 3}
+      objectReference: {fileID: 8300000, guid: 007985df9bad1fe4d995810cdd600f9d, type: 3}
     - target: {fileID: 1637843975205283494, guid: bcca9cef4dcca3144b506b07d69ef9db,
         type: 3}
       propertyPath: coinText
@@ -13038,7 +13038,7 @@ PrefabInstance:
     - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 372.2863
+      value: 527.8142
       objectReference: {fileID: 0}
     - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
@@ -13083,7 +13083,7 @@ PrefabInstance:
     - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 218.3
+      value: 296.1
       objectReference: {fileID: 0}
     - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
@@ -13109,6 +13109,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Song Place
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847735, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_Text
+      value: 'LIVE TIME - AL COIN-COMFORTABLE MASTER 1_01
+
+        The rest of songs
+        are by me AL COIN'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1, type: 3}
