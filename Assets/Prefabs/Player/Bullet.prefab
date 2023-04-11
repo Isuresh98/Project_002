@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7429786996476132081}
   - component: {fileID: 2877004625046215335}
   - component: {fileID: 421448119369176055}
-  - component: {fileID: 793133497}
+  - component: {fileID: 7695071249987810862}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -135,7 +135,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!96 &793133497
+--- !u!96 &7695071249987810862
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -184,7 +184,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.38571358
+        value: 0.27142793
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -196,7 +196,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.7176471, g: 0, b: 0.21568629, a: 1}
+      key0: {r: 0.68235296, g: 0.003921569, b: 0.20784315, a: 1}
       key1: {r: 0.7176471, g: 0, b: 0.21568629, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -229,6 +229,6 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 1

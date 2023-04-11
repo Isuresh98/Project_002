@@ -20,8 +20,7 @@ public class Shooting : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip shootA;
 
-    // LineRenderer
-    public Material laserMaterial;
+  
 
     void Start()
     {
@@ -40,7 +39,7 @@ public class Shooting : MonoBehaviour
         }
 
         // Add a listener to the button's onClick event
-        shootButton.onClick.AddListener(OnShootButtonClicked);
+
     }
 
     void Update()
@@ -73,21 +72,31 @@ public class Shooting : MonoBehaviour
                     bulletPool[i].transform.position = firePoint.position;
                     bulletPool[i].transform.rotation = firePoint.rotation;
 
-                    // Add LineRenderer to the bullet
-                    LineRenderer lineRenderer = bulletPool[i].GetComponent<LineRenderer>();
-                    if (lineRenderer == null)
-                    {
-                        lineRenderer = bulletPool[i].AddComponent<LineRenderer>();
-                    }
-                    lineRenderer.material = laserMaterial;
-                    lineRenderer.widthMultiplier = 0.1f;
-                    lineRenderer.positionCount = 2;
-                    lineRenderer.SetPosition(0, bulletPool[i].transform.position);
-                    lineRenderer.SetPosition(1, bulletPool[i].transform.position + bulletPool[i].transform.right * 10f);
+                  
+
+                    StartCoroutine(DisableLineRenderer(bulletPool[i]));
 
                     break;
                 }
             }
         }
+    }
+
+    IEnumerator DisableLineRenderer(GameObject bullet)
+    {
+        // Get the Trail Renderer component on the bullet
+        TrailRenderer trailRenderer = bullet.GetComponent<TrailRenderer>();
+
+        // Enable the Trail Renderer component
+        trailRenderer.enabled = true;
+
+        // Wait for a short duration
+        yield return new WaitForSeconds(1f);
+
+        // Set the bullet to inactive
+        bullet.SetActive(false);
+
+        // Disable the Trail Renderer component
+        trailRenderer.enabled = false;
     }
 }

@@ -82,6 +82,9 @@ public class PlayerController_test : MonoBehaviour
     //enemy
     public float attackingDistance;
     private GameObject Boss;
+
+    private bool isGameWinSoundPlayed = false;
+    private bool isGameOverSoundPlayed = false;
     void Start()
     {
         //audio
@@ -135,7 +138,7 @@ public class PlayerController_test : MonoBehaviour
     void Update()
     {
 
-       
+      
       
 
         if (bossScript.maxHealth <= 0)
@@ -186,9 +189,13 @@ public class PlayerController_test : MonoBehaviour
                 controlPanel.SetActive(false);
 
                 //audio
-               
-                audioSource.clip = GameWinAV;
-                audioSource.PlayOneShot(GameWinAV);
+
+                if (!isGameWinSoundPlayed)
+                {
+                    audioSource.clip = GameWinAV;
+                    audioSource.PlayOneShot(GameWinAV);
+                    isGameWinSoundPlayed = true;
+                }
                 // move the player towards the target point
                 transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 
@@ -219,10 +226,14 @@ public class PlayerController_test : MonoBehaviour
                 controlPanel.SetActive(false);
 
                 //audio
-              
-                audioSource.clip = GameOverAV;
-                audioSource.PlayOneShot(GameWinAV);
-                
+
+                if (!isGameOverSoundPlayed)
+                {
+                    audioSource.clip = GameOverAV;
+                    audioSource.PlayOneShot(GameOverAV);
+                    isGameOverSoundPlayed = true;
+                }
+
 
                 // do something when the game is over
                 break;

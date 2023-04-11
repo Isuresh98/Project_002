@@ -17,9 +17,9 @@ public class Bik_Shooting : MonoBehaviour
     // animation
     private Animator anim;
 
-    //audio
+    // Audio
     public AudioSource audioSource;
-    public AudioClip ShootA;
+    public AudioClip shootA;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,28 +59,44 @@ public class Bik_Shooting : MonoBehaviour
     }
     public void Shoot(bool buttonPressed)
     {
-        
         if (buttonPressed && bulletPool.Count > 0)
         {
-          //  anim.SetBool("isShoot", true);
-            
             for (int i = 0; i < bulletPool.Count; i++)
             {
                 if (!bulletPool[i].activeInHierarchy)
                 {
-                    audioSource.clip = ShootA;
-                    audioSource.PlayOneShot(ShootA);
+                    audioSource.clip = shootA;
+                    audioSource.PlayOneShot(shootA);
                     anim.SetTrigger("isShoot1");
                     bulletPool[i].SetActive(true);
                     bulletPool[i].transform.position = firePoint.position;
                     bulletPool[i].transform.rotation = firePoint.rotation;
-                   
-                   // 
-                    
+
+
+
+                    StartCoroutine(DisableLineRenderer(bulletPool[i]));
+
                     break;
                 }
             }
-           
         }
+    }
+
+    IEnumerator DisableLineRenderer(GameObject bullet)
+    {
+        // Get the Trail Renderer component on the bullet
+        TrailRenderer trailRenderer = bullet.GetComponent<TrailRenderer>();
+
+        // Enable the Trail Renderer component
+        trailRenderer.enabled = true;
+
+        // Wait for a short duration
+        yield return new WaitForSeconds(1f);
+
+        // Set the bullet to inactive
+        bullet.SetActive(false);
+
+        // Disable the Trail Renderer component
+        trailRenderer.enabled = false;
     }
 }
