@@ -102,6 +102,7 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject, 0.2f);
 
         }
+       
     }
 
 }

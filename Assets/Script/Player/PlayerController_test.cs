@@ -307,7 +307,7 @@ public class PlayerController_test : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            maxHealth -= 2;
+            maxHealth -= 3;
 
 
         }
@@ -320,17 +320,24 @@ public class PlayerController_test : MonoBehaviour
             isGrounded = false;
           
         }
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            maxHealth -= 2;
-
-
-        }
+        
     }
    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            maxHealth -= 3;
+
+
+        }
+        if (collision.gameObject.CompareTag("Helth"))
+        {
+            maxHealth += 20;
+            Destroy(collision.gameObject);
+
+        }
         if (collision.gameObject.CompareTag("EBosBullet"))
         {
 
