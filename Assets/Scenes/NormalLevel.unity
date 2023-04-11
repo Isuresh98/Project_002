@@ -2393,7 +2393,7 @@ GameObject:
   - component: {fileID: 369863885}
   - component: {fileID: 369863884}
   m_Layer: 0
-  m_Name: Armature_animtion0_0
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -60,13 +60,26 @@ public class PlayerController_Bike : MonoBehaviour
 
     //audio
     public AudioSource audioSource;
-    public AudioClip jumpA;
+ 
     public AudioClip HurtA;
-    public AudioClip BoosterA;
-    public AudioClip GameOverA;
-    public AudioClip GameWinA; 
-    public AudioClip CoinA; 
-
+ 
+    public AudioClip GameOverAV;
+    public AudioClip GameWinAV;
+    public AudioClip CoinA;
+    public AudioClip A1;
+    public AudioClip A2;
+    public AudioClip A3;
+    public AudioClip A4;
+    public AudioClip A5;
+    public AudioClip A6;
+    public AudioClip A7;
+    public AudioClip A8;
+    public AudioClip A9;
+    public AudioClip A10;
+    public AudioClip A11;
+    public AudioClip A12;
+    private bool isGameWinSoundPlayed = false;
+    private bool isGameOverSoundPlayed = false;
     void Start()
     {
         //audio
@@ -131,7 +144,8 @@ public class PlayerController_Bike : MonoBehaviour
             gameState = GameState.GameOver;
             print("Game Over");
             // The Player is destroyed game Over
-            Destroy(gameObject, 2.5f);
+            Destroy(gameObject, 1f);
+
 
         }
 
@@ -162,8 +176,13 @@ public class PlayerController_Bike : MonoBehaviour
                 controlPanel.SetActive(false);
 
                 //audio
-                audioSource.clip = GameWinA;
-                audioSource.Play();
+
+                if (!isGameWinSoundPlayed)
+                {
+                    audioSource.clip = GameWinAV;
+                    audioSource.PlayOneShot(GameWinAV);
+                    isGameWinSoundPlayed = true;
+                }
                 // move the player towards the target point
                 transform.Translate(Vector3.right * Time.deltaTime * 20);
 
@@ -194,8 +213,14 @@ public class PlayerController_Bike : MonoBehaviour
                 controlPanel.SetActive(false);
 
                 //audio
-                audioSource.clip = GameOverA;
-                audioSource.Play();
+
+                if (!isGameOverSoundPlayed)
+                {
+                    audioSource.clip = GameOverAV;
+                    audioSource.PlayOneShot(GameOverAV);
+                    isGameOverSoundPlayed = true;
+                }
+
                 // do something when the game is over
                 break;
         }
@@ -321,7 +346,139 @@ public class PlayerController_Bike : MonoBehaviour
 
 
         }
+        if (collision.gameObject.CompareTag("1"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A1;
+                otherAudioSource.PlayOneShot(A1);
+            }
 
+        }
+        if (collision.gameObject.CompareTag("2"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A2;
+                otherAudioSource.PlayOneShot(A2);
+            }
+        }
+        if (collision.gameObject.CompareTag("3"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A3;
+                otherAudioSource.PlayOneShot(A3);
+            }
+        }
+        if (collision.gameObject.CompareTag("4"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A4;
+                otherAudioSource.PlayOneShot(A4);
+            }
+        }
+        if (collision.gameObject.CompareTag("5"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A5;
+                otherAudioSource.PlayOneShot(A5);
+            }
+        }
+        if (collision.gameObject.CompareTag("6"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A6;
+                otherAudioSource.PlayOneShot(A6);
+            }
+        }
+        if (collision.gameObject.CompareTag("7"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A7;
+                otherAudioSource.PlayOneShot(A7);
+            }
+        }
+        if (collision.gameObject.CompareTag("8"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A8;
+                otherAudioSource.PlayOneShot(A8);
+            }
+        }
+        if (collision.gameObject.CompareTag("9"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A9;
+                otherAudioSource.PlayOneShot(A9);
+            }
+        }
+        if (collision.gameObject.CompareTag("10"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A10;
+                otherAudioSource.PlayOneShot(A10);
+            }
+        }
+        if (collision.gameObject.CompareTag("11"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A11;
+                otherAudioSource.PlayOneShot(A11);
+            }
+        }
+        if (collision.gameObject.CompareTag("12"))
+        {
+            // Get the AudioSource component from the collided game object
+            AudioSource otherAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            if (otherAudioSource != null)
+            {
+                // Set the audio clip and play it
+                otherAudioSource.clip = A12;
+                otherAudioSource.PlayOneShot(A12);
+            }
+        }
     }
 
 
@@ -389,26 +546,9 @@ public class PlayerController_Bike : MonoBehaviour
 
     }
 
-    public void JumpButtonDown()
-    {
-        if (isGrounded)
-        {
-            isJumping = true;
-            hasJumped = false;
-            audioSource.clip = jumpA;
-            audioSource.Play();
+   
 
-        }
-      
-    }
-
-    public void JumpButtonUp()
-    {
-        isJumping = false;
-        audioSource.clip = jumpA;
-        audioSource.Stop();
-
-    }
+   
 
     void Flip()
     {
@@ -418,25 +558,10 @@ public class PlayerController_Bike : MonoBehaviour
 
     //jetpak
     // Called when the boost button is pressed
-    public void BoostButtonPressed()
-    {
-        isBoosterOn = true;
-       
-        anima.SetBool("isJet", true);
-        anima.SetBool("isJump", false);
-        audioSource.clip = BoosterA;
-        audioSource.Play();
-    }
+   
 
     // Called when the boost button is released
-    public void BoostButtonReleased()
-    {
-        isBoosterOn = false;
-       
-        anima.SetBool("isJet", false);
-        audioSource.clip = BoosterA;
-        audioSource.Stop();
-    }
+   
    
 
 }
