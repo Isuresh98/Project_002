@@ -81,6 +81,8 @@ public class PlayerController_Bike : MonoBehaviour
     public AudioClip BikeSound;
     private bool isGameWinSoundPlayed = false;
     private bool isGameOverSoundPlayed = false;
+
+    bool isGameWin = false;
     void Start()
     {
         //audio
@@ -110,6 +112,8 @@ public class PlayerController_Bike : MonoBehaviour
         gameOverPanel.SetActive(false);
         gameWinPanel.SetActive(false);
         controlPanel.SetActive(true);
+
+        
     }
 
 
@@ -135,17 +139,17 @@ public class PlayerController_Bike : MonoBehaviour
             //game win
             gameState = GameState.Win;
             print("Game Win");
+            isGameWin = true;
         }
 
-        if (maxHealth <= 0)
+        if (maxHealth <= 0&& !isGameWin)
         {
 
             maxHealth = 0;
             anima.SetBool("isDeth", true);
             gameState = GameState.GameOver;
             print("Game Over");
-            // The Player is destroyed game Over
-            Destroy(gameObject, 1f);
+           
 
 
         }
@@ -165,7 +169,7 @@ public class PlayerController_Bike : MonoBehaviour
                 
                 isMovingLeft = false;
                 isMovingRight = false;
-                
+              
 
                 //animation
                 
@@ -203,7 +207,8 @@ public class PlayerController_Bike : MonoBehaviour
                 isMovingRight = false;
                 isJumping = false;
                 isBoosterOn = false;
-
+                // The Player is destroyed game Over
+                Destroy(gameObject, 0.5f);
                 //animation
                 anima.SetBool("isJet", false);
                 anima.SetBool("isJump", false);
