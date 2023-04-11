@@ -140,7 +140,9 @@ public class PlayerController_Bike : MonoBehaviour
             gameState = GameState.Win;
             print("Game Win");
             isGameWin = true;
-        }
+            Collider2D boss = GameObject.FindGameObjectWithTag("Bos1").GetComponent<Collider2D>();
+            boss.isTrigger = true;
+         }
 
         if (maxHealth <= 0&& !isGameWin)
         {
@@ -302,6 +304,10 @@ public class PlayerController_Bike : MonoBehaviour
             isGrounded = true;
             anima.SetBool("isJump", false);
             
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            maxHealth -= 1;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

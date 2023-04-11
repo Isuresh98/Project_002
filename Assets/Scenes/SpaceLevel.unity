@@ -68943,6 +68943,7 @@ RectTransform:
   m_Children:
   - {fileID: 84499444}
   - {fileID: 1477433584}
+  - {fileID: 926025985}
   m_Father: {fileID: 698196660}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70745,6 +70746,139 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &926025984
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 510662347}
+    m_Modifications:
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 554.31396
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 58.173462
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 306.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847733, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_Name
+      value: Song Place
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299119617008847735, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+        type: 3}
+      propertyPath: m_Text
+      value: 'LIVE TIME - AL COIN - DND MASTERED_01
+
+        The rest of songs are
+        by me AL COIN'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1, type: 3}
+--- !u!224 &926025985 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5299119617008847732, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 926025984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &928093134
 GameObject:
   m_ObjectHideFlags: 0
@@ -72158,7 +72292,7 @@ SpriteRenderer:
   m_Size: {x: 17.233334, y: 17.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1394766822
@@ -74294,6 +74428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1637843975205283493, guid: bcca9cef4dcca3144b506b07d69ef9db,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: add8de305dbbca34994e531e09c5546c, type: 3}
     - target: {fileID: 1637843975205283494, guid: bcca9cef4dcca3144b506b07d69ef9db,
         type: 3}
       propertyPath: coinText
