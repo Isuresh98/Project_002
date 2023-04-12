@@ -309,6 +309,12 @@ public class PlayerController_Bike : MonoBehaviour
         {
             maxHealth -= 1;
         }
+        if (collision.gameObject.CompareTag("Helth"))
+        {
+            maxHealth += 20;
+            Destroy(collision.gameObject);
+
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -323,6 +329,12 @@ public class PlayerController_Bike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Helth"))
+        {
+            maxHealth += 20;
+            Destroy(collision.gameObject);
+
+        }
         if (collision.gameObject.CompareTag("EBosBullet"))
         {
 
