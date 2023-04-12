@@ -9,9 +9,39 @@ EditorBuildSettings:
     path: Assets/Scenes/Main menu.unity
     guid: 499a13a4923e63f408d3a070ede52ac0
   - enabled: 1
-    path: Assets/Scenes/NormalLevel.unity
+    path: Assets/Scenes/NormalL1.unity
     guid: ad5bba04636e4e8409d9323a6da3df01
   - enabled: 1
-    path: Assets/Scenes/BikeLevel.unity
+    path: Assets/Scenes/BikeL1.unity
     guid: 21b805587c7110545b028cdd11be8e2d
+  - enabled: 1
+    path: Assets/Scenes/NormalL2.unity
+    guid: 41d4f0cf8999bb04fbe9de9d315ef48d
+  - enabled: 1
+    path: Assets/Scenes/SpaceL1.unity
+    guid: a09925dfeece4254bb696eb2e6b098fe
+  - enabled: 1
+    path: Assets/Scenes/NormalL3.unity
+    guid: ca51a3db732a09149a7b1cc6aeafd8c8
+  - enabled: 1
+    path: Assets/Scenes/BikeL2.unity
+    guid: 2b1082a2dbd20914a9133c17258e3cd2
+  - enabled: 1
+    path: Assets/Scenes/NormalL4.unity
+    guid: 66a4a7030045619479e0c7c828911780
+  - enabled: 1
+    path: Assets/Scenes/SpaceL2.unity
+    guid: e06784ccf9b856841a50f1d7b12d51bc
+  - enabled: 1
+    path: Assets/Scenes/Scating L.unity
+    guid: a620037df8cd1734c9bbff9665508333
+  - enabled: 1
+    path: Assets/Scenes/SpaceL3.unity
+    guid: 718b4da16d88e0847a69fe0f58883b38
+  - enabled: 1
+    path: Assets/Scenes/BikeL3.unity
+    guid: 07f0e27465fa35e4fb188abb5ba52edc
+  - enabled: 1
+    path: Assets/Scenes/NormalL5.unity
+    guid: 58d684f302a8d554c9f29d07985d9d04
   m_configObjects: {}

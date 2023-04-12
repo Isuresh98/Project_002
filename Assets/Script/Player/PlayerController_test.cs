@@ -202,6 +202,9 @@ public class PlayerController_test : MonoBehaviour
                 // check if the player has reached the target point
                 if (transform.position.x >= targetPoint.position.x)
                 {
+                    // Unlock the next level
+                    int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                    PlayerPrefs.SetInt("Level" + nextLevelIndex.ToString(), 1);
                     // load the next scene
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
