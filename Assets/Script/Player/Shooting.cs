@@ -50,11 +50,14 @@ public class Shooting : MonoBehaviour
     public void OnShootButtonClicked()
     {
         Shoot(true);
+        anim.SetBool("isShoot",true);
     }
 
     public void OnShootButtonReleased()
     {
         Shoot(false);
+        anim.SetBool("isShoot", false);
+
     }
 
     public void Shoot(bool buttonPressed)
