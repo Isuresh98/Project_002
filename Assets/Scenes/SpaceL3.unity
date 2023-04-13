@@ -78843,7 +78843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf30fd9820ea764abe7a43e9f17d120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 928093136}
+  player: {fileID: 572998582}
   moveSpeed: 4
   activeDistance: 25
   stopDistance: 4
