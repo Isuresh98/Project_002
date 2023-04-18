@@ -24,7 +24,7 @@ public class PlayerController_test : MonoBehaviour
     
 
     // Jetpack
-    public float jetpackForce = 5f;
+   private float jetpackForce = 75f;
     public float maxFuel = 100f;
     public float fuelBurnRate = 10f;
     private float currentFuel;

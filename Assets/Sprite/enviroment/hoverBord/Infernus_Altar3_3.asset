@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Infernus_Altar3_3
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: e01e47b31e02c754f9b6697963295973, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5801887, b: 0.5801887, a: 1}
   m_Transform:
     e00: 1
     e01: 0
