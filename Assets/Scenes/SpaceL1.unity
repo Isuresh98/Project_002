@@ -74983,10 +74983,7 @@ PrefabInstance:
     - target: {fileID: 5299119617008847735, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
       propertyPath: m_Text
-      value: 'LIVE TIME - AL COIN - DND MASTERED_01
-
-        The rest of songs are
-        by me AL COIN'
+      value: AL COIN-SORRY
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1, type: 3}
@@ -84110,7 +84107,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: add8de305dbbca34994e531e09c5546c, type: 3}
+      objectReference: {fileID: 8300000, guid: cf3a5bd8f1f548f4ea3971a3c6a8ef7a, type: 3}
     - target: {fileID: 1637843975205283494, guid: bcca9cef4dcca3144b506b07d69ef9db,
         type: 3}
       propertyPath: coinText

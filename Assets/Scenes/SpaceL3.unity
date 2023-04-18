@@ -75231,10 +75231,7 @@ PrefabInstance:
     - target: {fileID: 5299119617008847735, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
       propertyPath: m_Text
-      value: 'LIVE TIME -OUR SIDE MASTER 1.0_01
-
-        The rest of songs are by
-        me AL COIN'
+      value: Livetime - L.I.V.E. Part II
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1, type: 3}
@@ -85289,7 +85286,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: e4c2e4789edd72241935eedb6dfdfd2f, type: 3}
+      objectReference: {fileID: 8300000, guid: 8a904fb167382f54fb928a5ad031eb84, type: 3}
     - target: {fileID: 1637843975205283494, guid: bcca9cef4dcca3144b506b07d69ef9db,
         type: 3}
       propertyPath: coinText

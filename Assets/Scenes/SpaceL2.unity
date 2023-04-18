@@ -75290,8 +75290,7 @@ PrefabInstance:
     - target: {fileID: 5299119617008847735, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1,
         type: 3}
       propertyPath: m_Text
-      value: "LIVE TIME - THE CHOP MASTER 1.0(0)_01 \nThe rest of songs are by me
-        AL COIN"
+      value: Livetime - Brighter Day
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920c6af32ddeb2043a9e8ba2ed80bfa1, type: 3}
@@ -84981,7 +84980,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 72432cc3766d60b49a5cebe9c59bce9c, type: 3}
+      objectReference: {fileID: 8300000, guid: 10f16c69a60f39c47a805ca8d527310a, type: 3}
     - target: {fileID: 1637843975205283494, guid: bcca9cef4dcca3144b506b07d69ef9db,
         type: 3}
       propertyPath: coinText
