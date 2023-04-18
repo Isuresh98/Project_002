@@ -241,7 +241,20 @@ public class ScatingPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-       
+        //updownmovementset
+
+        if (isMovingUp)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, moveSpeed);
+        }
+        else if (isMovingDown)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -moveSpeed);
+        }
+        else
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+        }
 
 
 
@@ -531,6 +544,31 @@ public class ScatingPlayer : MonoBehaviour
             audioSource.Play();
         }
 
+    }
+
+    public bool isMovingUp;
+    public bool isMovingDown;
+
+    public void MoveUpDownButtonDown()
+    {
+        isMovingUp = true;
+    }
+
+    public void MoveUpDownButtonUp()
+    {
+        isMovingUp = false;
+        isMovingDown = false;
+    }
+
+    public void MoveDownButtonDown()
+    {
+        isMovingDown = true;
+    }
+
+    public void MoveDownButtonUp()
+    {
+        isMovingUp = false;
+        isMovingDown = false;
     }
 
     public void MoveLeftButtonDown()
