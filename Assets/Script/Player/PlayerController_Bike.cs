@@ -243,6 +243,8 @@ public class PlayerController_Bike : MonoBehaviour
 
     }
 
+
+
     void FixedUpdate()
     {
         //jetpak
@@ -544,7 +546,30 @@ public class PlayerController_Bike : MonoBehaviour
         }
 
      }
+    public bool isMovingUp;
+    public bool isMovingDown;
 
+    public void MoveUpDownButtonDown()
+    {
+        isMovingUp = true;
+    }
+
+    public void MoveUpDownButtonUp()
+    {
+        isMovingUp = false;
+        isMovingDown = false;
+    }
+
+    public void MoveDownButtonDown()
+    {
+        isMovingDown = true;
+    }
+
+    public void MoveDownButtonUp()
+    {
+        isMovingUp = false;
+        isMovingDown = false;
+    }
     public void MoveLeftButtonDown()
     {
         audioSource.clip = BikeSound;
