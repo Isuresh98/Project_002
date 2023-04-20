@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,10 +19,16 @@ public class Shooting : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip shootA;
 
-  
+    //other Gun add
+    public GameObject gun2;
+    public Transform firePoint2;
+
+    // Flag to indicate which gun is currently active
+    private bool isGun2Active = false;
 
     void Start()
     {
+        gun2.SetActive(false);
         // Audio
         audioSource = GetComponent<AudioSource>();
 
@@ -50,14 +55,13 @@ public class Shooting : MonoBehaviour
     public void OnShootButtonClicked()
     {
         Shoot(true);
-        anim.SetBool("isShoot",true);
+        anim.SetBool("isShoot", true);
     }
 
     public void OnShootButtonReleased()
     {
         Shoot(false);
         anim.SetBool("isShoot", false);
-
     }
 
     public void Shoot(bool buttonPressed)
@@ -72,18 +76,38 @@ public class Shooting : MonoBehaviour
                     audioSource.PlayOneShot(shootA);
                     anim.SetTrigger("isShoot1");
                     bulletPool[i].SetActive(true);
+
                     bulletPool[i].transform.position = firePoint.position;
                     bulletPool[i].transform.rotation = firePoint.rotation;
 
-                  
+                    // Spawn a second bullet from the second fire point
+                    if (isGun2Active)
+                    {
+                        // Get another inactive bullet from the pool
+                        GameObject bullet2 = bulletPool.Find(bullet => !bullet.activeInHierarchy);
 
-                    StartCoroutine(DisableLineRenderer(bulletPool[i]));
+                        // Set the second bullet to be active and positioned at the second fire point
+                        bullet2.SetActive(true);
+                        bullet2.transform.position = firePoint2.position;
+                        bullet2.transform.rotation = firePoint2.rotation;
+
+                        // Disable the trail renderer after a short duration for both bullets
+                        StartCoroutine(DisableLineRenderer(bulletPool[i]));
+                        StartCoroutine(DisableLineRenderer(bullet2));
+                    }
+                    else
+                    {
+                        // Disable the trail renderer after a short duration for this bullet only
+                        StartCoroutine(DisableLineRenderer(bulletPool[i]));
+                    }
 
                     break;
                 }
             }
         }
     }
+
+
 
     IEnumerator DisableLineRenderer(GameObject bullet)
     {
@@ -101,5 +125,18 @@ public class Shooting : MonoBehaviour
 
         // Disable the Trail Renderer component
         trailRenderer.enabled = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Gun2"))
+        {
+            Destroy(collision.gameObject);
+            // Activate the second gun
+            gun2.SetActive(true);
+
+            // Set the flag to indicate that the second gun is now active
+            isGun2Active = true;
+        }
     }
 }
