@@ -131,9 +131,20 @@ public class PlayerController_Bike : MonoBehaviour
 
     private GameState gameState = GameState.InProgress;
 
+    public float MoveTSpeed = 5f;
 
     void Update()
     {
+        if (isMovingUp)
+        {
+            transform.Translate(Vector3.up * MoveTSpeed * Time.deltaTime);
+        }
+        else if (isMovingDown)
+        {
+            transform.Translate(Vector3.down * MoveTSpeed * Time.deltaTime);
+        }
+
+
         if (bossScript.maxHealth <= 0)
         {
             //game win
@@ -250,54 +261,33 @@ public class PlayerController_Bike : MonoBehaviour
         //jetpak
         if (isBoosterOn)
         {
-            rb.AddForce(new Vector2(0f, jetpackForce), ForceMode2D.Force);
-         
-         
+            transform.Translate(Vector2.up * jetpackForce * Time.fixedDeltaTime);
         }
-        
 
-
+        //left-right movement
+        float moveDirection = 0f;
         if (isMovingLeft)
         {
-           FronTire.AddTorque(moveSpeed * Time.fixedDeltaTime);
-            BackTire.AddTorque(moveSpeed * Time.fixedDeltaTime);
-            //  rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-
-         /*   if (facingRight)
-            {
-                Flip();
-            }
-         */
+            moveDirection = -1f;
         }
         else if (isMovingRight)
         {
-            FronTire.AddTorque(-moveSpeed * Time.fixedDeltaTime);
-            BackTire.AddTorque(-moveSpeed * Time.fixedDeltaTime);
-
-            //  rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-
-            /*  if (!facingRight)
-             {
-                 Flip();
-             } */
-        }
-        else
-        {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
+            moveDirection = 1f;
         }
 
+        transform.Translate(Vector2.right * moveSpeed * moveDirection * Time.fixedDeltaTime);
+
+        //jump
         if (isJumping && isGrounded && !hasJumped)
         {
             rb.velocity = Vector2.up * jumpForce;
             hasJumped = true;
-           
         }
 
-        if (!isGrounded&&!isBoosterOn)
+        //animation
+        if (!isGrounded && !isBoosterOn)
         {
             anima.SetBool("isJump", true);
-          
-
         }
     }
 

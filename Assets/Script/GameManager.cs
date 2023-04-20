@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int CurrentCoinAmount;
     public string url;
     public Text coinText;
+    public bool isPaused;
     void Start()
     {
         ChekPoint = GameObject.FindGameObjectWithTag("Boundry");
@@ -48,4 +49,21 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+
 }
+
