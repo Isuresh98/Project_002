@@ -35,6 +35,7 @@ TagManager:
   - 12
   - Helth
   - Gun2
+  - AudioManager
   layers:
   - Default
   - TransparentFX

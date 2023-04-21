@@ -17977,6 +17977,11 @@ PrefabInstance:
       objectReference: {fileID: 7859197072619779694}
     - target: {fileID: 6277980077308234429, guid: 5c233be8b0792a84093f942463d79f4f,
         type: 3}
+      propertyPath: effectAudioSources.Array.data[13]
+      value: 
+      objectReference: {fileID: 926011184}
+    - target: {fileID: 6277980077308234429, guid: 5c233be8b0792a84093f942463d79f4f,
+        type: 3}
       propertyPath: backgroundAudioSources.Array.data[0]
       value: 
       objectReference: {fileID: 1637843974206657204}

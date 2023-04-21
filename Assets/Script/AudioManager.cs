@@ -9,13 +9,18 @@ public class AudioManager : MonoBehaviour
     public Slider backgroundVolumeSlider;
     public Slider effectVolumeSlider;
 
-    public GameObject audioPanel;
+   public GameObject audioPanel;
+   private GameObject audioManager;
     
     void Start()
     {
         backgroundVolumeSlider.value = GetBackgroundVolume();
         effectVolumeSlider.value = GetEffectVolume();
+
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
         audioPanel.SetActive(false);
+
+                  
     }
 
     public void SetBackgroundVolume(float volume)
