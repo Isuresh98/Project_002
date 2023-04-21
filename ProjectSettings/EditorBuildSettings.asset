@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NormalL5.unity
     guid: 58d684f302a8d554c9f29d07985d9d04
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 7f6e4aa404152cb4e85c8bfb35e4d40f
   m_configObjects: {}

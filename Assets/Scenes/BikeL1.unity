@@ -3983,7 +3983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214028306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 19.3}
+  m_LocalPosition: {x: 1.3, y: -4.9, z: 19.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1701503448}
@@ -4030,8 +4030,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -11
-  m_Sprite: {fileID: 21300000, guid: 5f090606212e7d849adc098feaef7552, type: 3}
-  m_Color: {r: 0.9450981, g: 0.023529414, b: 0.6627451, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b1bc5e349e454bf45b9cdc47634b2f02, type: 3}
+  m_Color: {r: 0.8018868, g: 0.68462974, b: 0.7659612, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4476,7 +4476,7 @@ MonoBehaviour:
   A11: {fileID: 8300000, guid: 271a7def1a9861b44b3eff5d70d5655a, type: 3}
   A12: {fileID: 8300000, guid: 04c79f765293f074a82e6316869ee158, type: 3}
   BikeSound: {fileID: 8300000, guid: b3a4af44077945c4c987b9895810c39d, type: 3}
-  MoveTSpeed: 20
+  MoveTSpeed: 10
   isMovingUp: 0
   isMovingDown: 0
 --- !u!50 &283108156
@@ -128007,7 +128007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701503447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.9, y: 0, z: 0}
+  m_LocalPosition: {x: 30, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 214028307}
@@ -128052,8 +128052,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -11
-  m_Sprite: {fileID: 21300000, guid: 5f090606212e7d849adc098feaef7552, type: 3}
-  m_Color: {r: 0.9450981, g: 0.023529414, b: 0.6627451, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b1bc5e349e454bf45b9cdc47634b2f02, type: 3}
+  m_Color: {r: 0.8018868, g: 0.68462974, b: 0.7659612, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129217,7 +129217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931767414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.3, y: 0, z: 0}
+  m_LocalPosition: {x: -30, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 214028307}
@@ -129262,8 +129262,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -11
-  m_Sprite: {fileID: 21300000, guid: 5f090606212e7d849adc098feaef7552, type: 3}
-  m_Color: {r: 0.9450981, g: 0.023529414, b: 0.6627451, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b1bc5e349e454bf45b9cdc47634b2f02, type: 3}
+  m_Color: {r: 0.8018868, g: 0.68462974, b: 0.7659612, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129280,16 +129280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7034021501195325683, guid: 450e046ef2de0bc48ad7ef6c6114bbe5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7034021502043926914, guid: 450e046ef2de0bc48ad7ef6c6114bbe5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.1
-      objectReference: {fileID: 0}
     - target: {fileID: 7034021502570306178, guid: 450e046ef2de0bc48ad7ef6c6114bbe5,
         type: 3}
       propertyPath: m_Name
@@ -131407,7 +131397,7 @@ PrefabInstance:
     - target: {fileID: 6013511118633031853, guid: 87505271ca8229144a0c3b8785b14e71,
         type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAMArIewgIXq7cgIAACoFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzg1jOSYkvbWEkB5ImJBOLr4IeY01yJJHkvlIhv/elWxjh54Qb/ftvn1a+YsIZSvgTpuFEdlSZ0B+jog/kx+jPvgMR7bVai0+ocv5EJkrfBILOW/MCY049TSrS3BG8F9qK31yhGCtRK5NOc+2MNPWWYRzJi1gyGjn2QqhrxE54s/Ng6ec8BRP/ekTTw/R6IxHDsqB6VMn0ThKaDyddITxHY2m9D6etLyGVisuWVlB5mfo2ZTG445Jk/Ek5CocsU2LQpRrKYVtFRJ3qoID66oAA96CTDAcOKjy8xcgtoXzWobc1zy34Fo3DDs9CoO+NUXJb92YWTK7a9Ttmax9m3v6EAdVTdXlfwk3NIRzo8vnrjGNfBNXCL57YyfOrBvYPYQfvyuv1YHJHdtI+ChAveiF0bXKMOhM7am1hfix/3uZbVYA3/V4I/UKrKve9u52u7v1M5zD+MeZFOUmOJ80wFrq4HdYCTB4N39QcFgY25ZA1Kv4a+GdbYeb1QaehLEOQ+2Uysvb6Nr4VDIPnvlpajfTRkGAW9EVKCbdaYVl3PUdXsUGba8iT8y/obZ5G+uexhUlwH1+FF2FVvpwuSxb6MMSbPFaOykU9KJ94AV9mmmlmhUbetLR1rXJGR/QtrXIvq8WmeRAkzim9JZO8YnlN7c8gc19tIknSZTAHSdh94TCOZlcNUJbe/DWVF9c4Z51n5bRwrAqrHtm2GEhPks9sFyoXK+5AVCvTYWLcDDYBN9lNs8EGrQG54QK902+UiI130GWXgqlYdL50RmW9lVSUom9dh5JySx8S1Li4csurwzsBRx8867YmZz/AVBLAwQUAAAICADAKyHsQZoHhG0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0kmlaqqGJkZGhobGhuZG5aZqucbJJapKFQZKRqYmBSapZslIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICADAKyHsICF6u3ICAAAqBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICADAKyHsQZoHhG0AAAB4AAAACQAkAAAAAAAAAAAAAAC/AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHcDAAAAAA==
+      value: UEsDBBQAAAgIAACAn+sgIXq7cgIAACoFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzg1jOSYkvbWEkB5ImJBOLr4IeY01yJJHkvlIhv/elWxjh54Qb/ftvn1a+YsIZSvgTpuFEdlSZ0B+jog/kx+jPvgMR7bVai0+ocv5EJkrfBILOW/MCY049TSrS3BG8F9qK31yhGCtRK5NOc+2MNPWWYRzJi1gyGjn2QqhrxE54s/Ng6ec8BRP/ekTTw/R6IxHDsqB6VMn0ThKaDyddITxHY2m9D6etLyGVisuWVlB5mfo2ZTG445Jk/Ek5CocsU2LQpRrKYVtFRJ3qoID66oAA96CTDAcOKjy8xcgtoXzWobc1zy34Fo3DDs9CoO+NUXJb92YWTK7a9Ttmax9m3v6EAdVTdXlfwk3NIRzo8vnrjGNfBNXCL57YyfOrBvYPYQfvyuv1YHJHdtI+ChAveiF0bXKMOhM7am1hfix/3uZbVYA3/V4I/UKrKve9u52u7v1M5zD+MeZFOUmOJ80wFrq4HdYCTB4N39QcFgY25ZA1Kv4a+GdbYeb1QaehLEOQ+2Uysvb6Nr4VDIPnvlpajfTRkGAW9EVKCbdaYVl3PUdXsUGba8iT8y/obZ5G+uexhUlwH1+FF2FVvpwuSxb6MMSbPFaOykU9KJ94AV9mmmlmhUbetLR1rXJGR/QtrXIvq8WmeRAkzim9JZO8YnlN7c8gc19tIknSZTAHSdh94TCOZlcNUJbe/DWVF9c4Z51n5bRwrAqrHtm2GEhPks9sFyoXK+5AVCvTYWLcDDYBN9lNs8EGrQG54QK902+UiI130GWXgqlYdL50RmW9lVSUom9dh5JySx8S1Li4csurwzsBRx8867YmZz/AVBLAwQUAAAICAAAgJ/rQZoHhG0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0kmlaqqGJkZGhobGhuZG5aZqucbJJapKFQZKRqYmBSapZslIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAgJ/rICF6u3ICAAAqBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/rQZoHhG0AAAB4AAAACQAkAAAAAAAAAAAAAAC/AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHcDAAAAAA==
       objectReference: {fileID: 0}
     - target: {fileID: 6013511118633031854, guid: 87505271ca8229144a0c3b8785b14e71,
         type: 3}
