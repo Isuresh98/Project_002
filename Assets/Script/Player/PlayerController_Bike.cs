@@ -151,11 +151,11 @@ public class PlayerController_Bike : MonoBehaviour
             gameState = GameState.Win;
             print("Game Win");
             isGameWin = true;
-            Collider2D boss = GameObject.FindGameObjectWithTag("Bos1").GetComponent<Collider2D>();
-            boss.isTrigger = true;
+         //   Collider2D boss = GameObject.FindGameObjectWithTag("Bos1").GetComponent<Collider2D>();
+         //   boss.isTrigger = true;
          }
 
-        if (maxHealth <= 0&& !isGameWin)
+        if (maxHealth <= 0&& !isGameWin&& bossScript.maxHealth == 0)
         {
 
             maxHealth = 0;
@@ -201,17 +201,13 @@ public class PlayerController_Bike : MonoBehaviour
                     audioSource.PlayOneShot(GameWinAV);
                     isGameWinSoundPlayed = true;
                 }
-                // move the player towards the target point
-                transform.Translate(Vector3.right * Time.deltaTime * 20);
 
-                // check if the player has reached the target point
-                if (transform.position.x >= targetPoint.position.x)
-                { // Unlock the next level
-                    int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
-                    PlayerPrefs.SetInt("Level" + nextLevelIndex.ToString(), 1);
-                    // load the next scene
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                }
+                int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                PlayerPrefs.SetInt("Level" + nextLevelIndex.ToString(), 1);
+                // load the next scene
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+               
                
 
                 break;

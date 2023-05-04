@@ -188,19 +188,21 @@ public class ScatingPlayer : MonoBehaviour
                     audioSource.PlayOneShot(GameWinAV);
                     isGameWinSoundPlayed = true;
                 }
+
+                // Unlock the next level
+                int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                PlayerPrefs.SetInt("Level" + nextLevelIndex.ToString(), 1);
+                // load the next scene
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 // move the player towards the target point
-                transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
+                //  transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 
-                // check if the player has reached the target point
-                if (transform.position.x >= targetPoint.position.x)
-                {
-                    // Unlock the next level
-                    int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
-                    PlayerPrefs.SetInt("Level" + nextLevelIndex.ToString(), 1);
-                    // load the next scene
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                }
+                /*   // check if the player has reached the target point
+                   if (transform.position.x >= targetPoint.position.x)
+                   {
 
+                   }
+   */
 
                 break;
             case GameState.GameOver:
